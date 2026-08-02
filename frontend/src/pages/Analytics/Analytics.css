@@ -1,0 +1,486 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ===================================
+   Global
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+/* ===================================
+   Layout
+=================================== */
+
+.analytics-page{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#0D1117;
+}
+
+.analytics-content{
+
+    flex:1;
+
+    padding:35px;
+
+    background:#0D1117;
+}
+
+/* ===================================
+   Header
+=================================== */
+
+.analytics-content h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#F8FAFC;
+
+    margin-bottom:10px;
+}
+
+.analytics-subtitle{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    margin-bottom:35px;
+}
+
+/* ===================================
+   Stats Cards
+=================================== */
+
+.analytics-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+    margin-bottom:35px;
+}
+
+.card{
+
+    background:#1C2128;
+
+    border:1px solid #30363D;
+
+    border-radius:20px;
+
+    padding:28px 24px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#14B8A6;
+
+    box-shadow:0 20px 40px rgba(20,184,166,.15);
+}
+
+.card-icon{
+
+    width:60px;
+
+    height:60px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(20,184,166,.12);
+
+    border:1px solid rgba(20,184,166,.25);
+
+    font-size:28px;
+}
+
+.card h2{
+
+    color:#F8FAFC;
+
+    font-size:34px;
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    color:#94A3B8;
+
+    font-size:15px;
+}
+
+/* ===================================
+   Charts
+=================================== */
+
+.charts-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:35px;
+}
+
+.chart-container{
+
+    background:#1C2128;
+
+    border:1px solid #30363D;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    transition:.3s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.chart-container:hover{
+
+    border-color:#14B8A6;
+}
+
+.chart-container h2{
+
+    color:#F8FAFC;
+
+    margin-bottom:22px;
+
+    font-size:22px;
+}
+/* ===================================
+   Progress Card
+=================================== */
+
+.progress-wrapper{
+
+    margin-top:20px;
+}
+
+.progress-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#CBD5E1;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#30363D;
+
+    border-radius:999px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #14B8A6,
+        #22C55E
+    );
+
+    border-radius:999px;
+
+    transition:.6s;
+}
+
+.progress-details{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:28px;
+}
+
+.progress-details strong{
+
+    display:block;
+
+    color:#14B8A6;
+
+    font-size:28px;
+}
+
+.progress-details span{
+
+    color:#94A3B8;
+
+    font-size:14px;
+}
+
+/* ===================================
+   Achievement
+=================================== */
+
+.achievement-card{
+
+    background:#1C2128;
+
+    border:1px solid #30363D;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.achievement-card:hover{
+
+    border-color:#14B8A6;
+}
+
+.achievement-card h2{
+
+    color:#F8FAFC;
+
+    margin-bottom:18px;
+}
+
+.achievement-card p{
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin:auto;
+}
+
+/* ===================================
+   Empty State
+=================================== */
+
+.empty-state{
+
+    background:#1C2128;
+
+    border:2px dashed #30363D;
+
+    border-radius:22px;
+
+    min-height:320px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.empty-state:hover{
+
+    border-color:#14B8A6;
+}
+
+.empty-state h2{
+
+    color:#F8FAFC;
+
+    margin-bottom:12px;
+}
+
+.empty-state p{
+
+    color:#94A3B8;
+}
+
+/* ===================================
+   Scrollbar
+=================================== */
+
+.analytics-content::-webkit-scrollbar{
+
+    width:8px;
+}
+
+.analytics-content::-webkit-scrollbar-thumb{
+
+    background:#14B8A6;
+
+    border-radius:20px;
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media(max-width:1100px){
+
+.analytics-cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.charts-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.analytics-content{
+
+padding:20px;
+
+}
+
+.analytics-cards{
+
+grid-template-columns:1fr;
+
+}
+
+.analytics-content h1{
+
+font-size:28px;
+
+}
+
+.progress-details{
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.chart-container{
+
+padding:22px;
+
+}
+
+.achievement-card{
+
+padding:25px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.analytics-content{
+
+padding:16px;
+
+}
+
+.analytics-content h1{
+
+font-size:24px;
+
+}
+
+.card{
+
+padding:22px;
+
+}
+
+.card-icon{
+
+width:52px;
+
+height:52px;
+
+font-size:24px;
+
+}
+
+}
+.analytics-title{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:10px;
+}
+
+.analytics-title svg{
+color:#14B8A6;
+}
+
+.empty-title{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+.empty-title svg{
+color:#14B8A6;
+}
+
+.achievement-title{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+.achievement-title svg{
+color:#F59E0B;
+}

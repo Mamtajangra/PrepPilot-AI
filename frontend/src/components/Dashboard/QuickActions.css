@@ -1,0 +1,295 @@
+/* ===================================
+   Quick Actions
+=================================== */
+
+.quick-actions {
+  background: #1c2128;
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  padding: 28px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+.quick-actions:hover {
+  border-color: #14b8a6;
+
+  box-shadow: 0 20px 40px rgba(20, 184, 166, 0.15);
+}
+
+/* ===================================
+   Heading
+=================================== */
+
+.quick-actions h2 {
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #f8fafc;
+
+  margin-bottom: 25px;
+}
+
+/* ===================================
+   Grid
+=================================== */
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* ===================================
+   Card
+=================================== */
+
+.quick-card {
+  background: #161b22;
+
+  border: 1px solid #30363d;
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #14b8a6;
+
+  box-shadow: 0 12px 30px rgba(20, 184, 166, 0.15);
+}
+
+/* ===================================
+   Icon
+=================================== */
+
+.quick-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 16px;
+
+  background: rgba(20, 184, 166, 0.12);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+
+  color: #14b8a6;
+
+  font-size: 30px;
+
+  transition: all 0.3s ease;
+}
+
+.quick-card:hover .quick-icon {
+  background: #14b8a6;
+
+  color: #ffffff;
+
+  transform: scale(1.08);
+}
+
+/* ===================================
+   Title
+=================================== */
+
+.quick-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #f8fafc;
+
+  margin-bottom: 10px;
+}
+
+/* ===================================
+   Description
+=================================== */
+
+.quick-card p {
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #94a3b8;
+
+  margin-bottom: 18px;
+
+  min-height: 48px;
+}
+
+/* ===================================
+   Button
+=================================== */
+
+.quick-card button {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #14b8a6;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.quick-card button:hover {
+  background: #0d9488;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.25);
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media (max-width: 992px) {
+
+  .quick-actions {
+    padding: 22px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .quick-card {
+    padding: 18px;
+  }
+
+ .quick-header{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:25px;
+
+}
+
+.quick-header svg{
+
+color:#14B8A6;
+
+}
+
+.quick-header h2{
+
+font-size:24px;
+
+font-weight:700;
+
+color:#F8FAFC;
+
+margin:0;
+
+}
+
+  .quick-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .quick-actions {
+    padding: 18px;
+  }
+
+  .quick-card {
+    padding: 16px;
+  }
+
+  .quick-card h3 {
+    font-size: 16px;
+  }
+
+  .quick-card p {
+    font-size: 13px;
+  }
+
+  .quick-card button{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:8px;
+
+padding:12px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(135deg,#14B8A6,#0F766E);
+
+color:white;
+
+font-size:14px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+ .quick-icon{
+
+width:60px;
+
+height:60px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,#14B8A6,#0F766E);
+
+color:#fff;
+
+border-radius:16px;
+
+margin-bottom:18px;
+
+box-shadow:0 10px 25px rgba(20,184,166,.25);
+
+}
+
+}

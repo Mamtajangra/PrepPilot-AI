@@ -1,0 +1,41 @@
+.search-bar{
+
+    width:100%;
+
+    max-width:450px;
+
+    padding:14px 18px;
+
+    margin:20px 0;
+
+    background:#1C2128;
+
+    border:1px solid #30363D;
+
+    border-radius:14px;
+
+    color:#F8FAFC;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.search-bar::placeholder{
+
+    color:#94A3B8;
+}
+
+.search-bar:focus{
+
+    border-color:#14B8A6;
+
+    box-shadow:0 0 0 4px rgba(20,184,166,.15);
+}
+
+.search-bar:hover{
+
+    border-color:#14B8A6;
+}

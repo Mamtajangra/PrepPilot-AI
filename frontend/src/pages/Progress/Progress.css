@@ -1,0 +1,305 @@
+/* ===================================
+   Layout
+=================================== */
+
+.progress-page{
+
+display:flex;
+
+min-height:100vh;
+
+background:#0D1117;
+
+}
+
+.progress-content{
+
+flex:1;
+
+padding:35px;
+
+overflow-y:auto;
+
+}
+
+/* ===================================
+   Hero
+=================================== */
+
+.progress-hero{
+
+background:#1C2128;
+
+border:1px solid #30363D;
+
+border-radius:22px;
+
+padding:35px;
+
+margin-bottom:30px;
+
+}
+
+.hero-badge{
+display:flex;
+align-items:center;
+gap:8px;
+width:fit-content;
+}
+.stat-icon{
+color:#14B8A6;
+margin-bottom:12px;
+}
+
+.progress-hero h1{
+
+font-size:36px;
+
+color:#F8FAFC;
+
+margin-bottom:12px;
+
+}
+
+.progress-hero p{
+
+color:#94A3B8;
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+/* ===================================
+   Stats
+=================================== */
+
+.progress-stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:24px;
+
+margin-bottom:30px;
+
+}
+
+.progress-card{
+
+background:#1C2128;
+
+border:1px solid #30363D;
+
+border-radius:20px;
+
+padding:28px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.progress-card:hover{
+
+border-color:#14B8A6;
+
+transform:translateY(-6px);
+
+box-shadow:0 15px 35px rgba(20,184,166,.15);
+
+}
+
+.progress-card span{
+
+font-size:36px;
+
+display:block;
+
+margin-bottom:16px;
+
+}
+
+.progress-card h2{
+
+color:#F8FAFC;
+
+font-size:34px;
+
+margin-bottom:10px;
+
+}
+
+.progress-card p{
+
+color:#94A3B8;
+
+}
+
+/* ===================================
+   Sections
+=================================== */
+
+.progress-section{
+
+background:#1C2128;
+
+border:1px solid #30363D;
+
+border-radius:20px;
+
+padding:28px;
+
+margin-bottom:30px;
+
+}
+
+.progress-section h2{
+
+color:#F8FAFC;
+
+margin-bottom:22px;
+
+}
+
+/* ===================================
+   Chart
+=================================== */
+
+.chart-placeholder{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:12px;
+}
+
+.chart-placeholder svg{
+color:#14B8A6;
+}
+
+/* ===================================
+   Goal
+=================================== */
+
+.goal-header{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:15px;
+
+color:#CBD5E1;
+
+font-weight:600;
+
+}
+
+.goal-bar{
+
+height:14px;
+
+background:#30363D;
+
+border-radius:999px;
+
+overflow:hidden;
+
+}
+
+.goal-fill{
+
+width:75%;
+
+height:100%;
+
+background:linear-gradient(90deg,#14B8A6,#22C55E);
+
+border-radius:999px;
+
+}
+
+/* ===================================
+   Achievements
+=================================== */
+
+.achievement-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.achievement-card{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+}
+
+.achievement-card svg{
+color:#14B8A6;
+}
+
+.achievement-card:hover{
+
+border-color:#14B8A6;
+
+transform:translateY(-5px);
+
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media(max-width:992px){
+
+.progress-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.achievement-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.progress-content{
+
+padding:20px;
+
+}
+
+.progress-stats{
+
+grid-template-columns:1fr;
+
+}
+
+.achievement-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.progress-hero h1{
+
+font-size:30px;
+
+}
+
+}

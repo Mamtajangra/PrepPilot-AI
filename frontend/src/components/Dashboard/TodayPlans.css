@@ -1,0 +1,237 @@
+/* ===================================
+   Today Plans
+=================================== */
+
+.today-plans {
+  background: #1c2128;
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  padding: 28px;
+  height: 100%;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+.today-plans:hover {
+  border-color: #14b8a6;
+  box-shadow: 0 20px 40px rgba(20, 184, 166, 0.15);
+}
+
+/* ===================================
+   Header
+=================================== */
+
+.today-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.today-title{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.today-title h2{
+
+font-size:24px;
+
+font-weight:700;
+
+color:#F8FAFC;
+
+}
+
+.today-title svg{
+
+color:#14B8A6;
+
+}
+
+.today-header span {
+  padding: 8px 15px;
+
+  border-radius: 999px;
+
+  background: rgba(20, 184, 166, 0.12);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+
+  color: #14b8a6;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===================================
+   Plans List
+=================================== */
+
+.today-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ===================================
+   Individual Plan Card
+=================================== */
+
+.today-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px;
+
+  background: #161b22;
+
+  border: 1px solid #30363d;
+  border-left: 5px solid #14b8a6;
+
+  border-radius: 16px;
+
+  transition: all 0.3s ease;
+}
+
+.today-card:hover {
+  transform: translateX(6px);
+
+  border-color: #14b8a6;
+
+  box-shadow: 0 12px 30px rgba(20, 184, 166, 0.12);
+}
+
+/* ===================================
+   Plan Info
+=================================== */
+
+.today-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+
+  color: #f8fafc;
+}
+
+.today-info p {
+  font-size: 14px;
+
+  color: #94a3b8;
+}
+
+/* ===================================
+   Status Badge
+=================================== */
+
+.status {
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+/* Completed */
+
+.status.completed {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+/* Pending */
+
+.status.pending {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* In Progress */
+
+.status.in-progress {
+  background: rgba(20, 184, 166, 0.12);
+  color: #14b8a6;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+}
+
+/* ===================================
+   Empty State
+=================================== */
+
+.today-empty-state{
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:50px 20px;
+
+  text-align:center;
+
+  background:#161B22;
+
+  border:1px solid #30363D;
+
+  border-radius:18px;
+}
+
+.today-empty-icon{
+
+width:60px;
+
+height:60px;
+
+margin-bottom:18px;
+
+color:#14B8A6;
+
+}
+
+.today-empty-state h3 {
+  margin-bottom: 10px;
+
+  font-size: 22px;
+
+ color:#F8FAFC;
+}
+
+.today-empty-state p {
+   color:#94A3B8;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+.today-empty-state:hover{
+    border-color:#14B8A6;
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media (max-width: 768px) {
+
+  .today-plans {
+    padding: 20px;
+  }
+
+  .today-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+}

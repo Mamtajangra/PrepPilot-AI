@@ -1,0 +1,163 @@
+/* ==========================================================================
+   PrepPilot AI - Responsive Styles (Mobile-First & Breakpoints)
+   ========================================================================== */
+
+/* Touch Device & Coarse Pointer Guard */
+@media (pointer: coarse) {
+    .cursor-follower-wrapper {
+        display: none !important;
+    }
+    .hero-section::before, 
+    .planner-section::before {
+        display: none !important;
+    }
+    .bento-card:hover, 
+    .exam-card:hover, 
+    .testimonial-card:hover,
+    .planner-interactive-wrapper:hover {
+        transform: none !important;
+    }
+    .btn-primary::after, .btn-primary-nav::after, .btn-secondary::after,
+    .bento-card::after, .exam-card::after, .testimonial-card::after, .planner-interactive-wrapper::after, .glass-nav::after {
+        display: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Drawer & Small Screen Adjustments (Max Width 1023px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+    /* Mobile Hamburger Menu */
+    .mobile-toggle-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 5%;
+        right: 5%;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: var(--transition-normal);
+        box-shadow: var(--glass-glow);
+    }
+
+    .nav-links.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-actions {
+        display: none;
+    }
+
+    /* Layout Grids */
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-trust-strip {
+        justify-content: center;
+    }
+
+    /* AI Study Planner Preview Layout */
+    .planner-interactive-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .planner-controls {
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    /* Bento Grid */
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-span-2 {
+        grid-column: span 1;
+    }
+
+    /* Exams & Testimonials Grids */
+    .exams-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Phone Screens (Max Width 639px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 639px) {
+    .hero-title {
+        font-size: 2.3rem;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+
+    .exams-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cta-card {
+        padding: 45px 20px;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .output-header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .output-metrics-summary {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,156 @@
+.how-it-works {
+  padding: 100px 20px;
+  background: #0D1117;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 70px;
+}
+
+.section-header h2 {
+  font-size: 2.7rem;
+  color: #E5E7EB;
+  margin-bottom: 18px;
+}
+
+.section-header p {
+  color: #9CA3AF;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.steps-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.step-card {
+  background: #161B22;
+  border: 1px solid #30363D;
+
+  border-radius: 20px;
+  padding: 36px;
+
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all .35s ease;
+}
+
+.step-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: #14B8A6;
+
+  transform: scaleX(0);
+
+  transition: .35s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+
+  border-color: #14B8A6;
+
+  box-shadow:
+      0 20px 45px rgba(0,0,0,.35),
+      0 0 25px rgba(20,184,166,.15);
+}
+
+.step-card:hover::before {
+  transform: scaleX(1);
+}
+
+.step-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(20,184,166,.10);
+
+  color: #14B8A6;
+
+  transition: .35s ease;
+}
+
+.step-card:hover .step-icon {
+  transform: rotate(-8deg) scale(1.08);
+
+  background: rgba(20,184,166,.18);
+}
+
+.step-number {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #14B8A6;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  font-size: .9rem;
+}
+
+.step-card h3 {
+  color: #E5E7EB;
+
+  font-size: 1.35rem;
+
+  margin-bottom: 16px;
+}
+
+.step-card p {
+  color: #9CA3AF;
+
+  line-height: 1.8;
+}
+
+@media (max-width:992px) {
+
+  .steps-container {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media (max-width:600px) {
+
+  .how-it-works {
+    padding: 70px 20px;
+  }
+
+  .section-header h2 {
+    font-size: 2.1rem;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+}

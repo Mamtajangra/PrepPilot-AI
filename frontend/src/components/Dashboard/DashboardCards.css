@@ -1,0 +1,166 @@
+/* ===================================
+   Dashboard Cards
+=================================== */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+/* ===================================
+   Individual Card
+=================================== */
+
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #1c2128;
+  border: 1px solid #30363d;
+  border-radius: 20px;
+
+  padding: 25px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #14b8a6;
+
+  box-shadow: 0 20px 40px rgba(20, 184, 166, 0.15);
+}
+
+/* Left Accent Line */
+
+.dashboard-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background: #14b8a6;
+}
+
+/* ===================================
+   Top Section
+=================================== */
+
+.stats-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.stats-title {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.stats-value {
+  color: #f8fafc;
+
+  font-size: 34px;
+  font-weight: 700;
+}
+
+/* ===================================
+   Icon
+=================================== */
+
+.stats-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 18px;
+
+  background: rgba(20, 184, 166, 0.12);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+
+  color: #14b8a6;
+
+  font-size: 28px;
+
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .stats-icon {
+  transform: scale(1.08);
+
+  background: #14b8a6;
+
+  color: #ffffff;
+}
+
+/* ===================================
+   Bottom Section
+=================================== */
+
+.stats-bottom {
+  margin-top: 18px;
+  padding-top: 16px;
+
+  border-top: 1px solid #30363d;
+}
+
+.trend{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-size:14px;
+
+font-weight:600;
+
+color:#16A34A;
+
+}
+/* ===================================
+   Responsive
+=================================== */
+
+@media (max-width: 768px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    padding: 22px;
+  }
+
+  .stats-value {
+    font-size: 28px;
+  }
+
+  .stats-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+}

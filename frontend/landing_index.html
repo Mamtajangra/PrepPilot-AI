@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PrepPilot AI - Next-Gen AI Study Planner & Adaptive Exam Prep Platform. Plan smarter, study better, achieve higher scores.">
+    <title>PrepPilot AI | AI-Powered Study Planner & Adaptive Exam Prep</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Ambient Glow Orbs -->
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+    <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+    <!-- ================= 1. STICKY GLASS NAVBAR ================= -->
+    <header class="navbar-wrapper">
+        <nav class="glass-nav" aria-label="Main Navigation">
+            <a href="#hero" class="brand-logo">
+                <span class="logo-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                </span>
+                <span class="brand-name">PrepPilot<span class="accent-text">.AI</span></span>
+            </a>
+
+            <button class="mobile-toggle-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#planner" class="nav-link">AI Planner</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#categories" class="nav-link">Exams</a></li>
+                <li><a href="#stats" class="nav-link">Metrics</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#planner" class="btn-primary-nav">Try Planner Free</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ================= 2. HERO SECTION ================= -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="pill-badge">
+                        <span class="badge-dot"></span>
+                        <span>Next-Gen AI Engine 2.0</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Plan Smarter. Master Any Exam with <span class="gradient-text">AI Precision</span>.
+                    </h1>
+                    <p class="hero-subtitle">
+                        PrepPilot AI generates hyper-personalized study roadmaps, adaptive daily schedules, and real-time weakness analytics tailored to your target score.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#planner" class="btn-primary">
+                            <span>Launch Planner Preview</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="#categories" class="btn-secondary">
+                            <span>Explore Exam Tracks</span>
+                        </a>
+                    </div>
+                    <div class="hero-trust-strip">
+                        <div class="avatar-group">
+                            <span class="avatar">AK</span>
+                            <span class="avatar">SR</span>
+                            <span class="avatar">PM</span>
+                            <span class="avatar">+4k</span>
+                        </div>
+                        <p class="trust-text">Trusted by <strong>50,000+ ambitious candidates</strong> across 120+ exams.</p>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-card-glow"></div>
+                    <div class="hero-mockup-card glass-panel">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="mockup-title">PrepPilot AI Engine • Live Dashboard</span>
+                            <span class="status-pill">Active Schedule</span>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="mockup-stat-row">
+                                <div class="mockup-stat">
+                                    <span class="stat-label">Target Exam</span>
+                                    <span class="stat-value text-gradient">UPSC Civil Services</span>
+                                </div>
+                                <div class="mockup-stat">
+                                    <span class="stat-label">Readiness Index</span>
+                                    <span class="stat-value text-emerald">88.4%</span>
+                                </div>
+                            </div>
+                            <div class="mockup-progress-box">
+                                <div class="progress-info">
+                                    <span>Current Topic: Indian Polity & Governance</span>
+                                    <span class="text-accent">Syllabus 64% Complete</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill" style="width: 64%;"></div>
+                                </div>
+                            </div>
+                            <div class="mockup-ai-card">
+                                <div class="ai-sparkle-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"></path></svg>
+                                </div>
+                                <div class="ai-card-content">
+                                    <strong>AI Adaptive Adjustment</strong>
+                                    <p>Identified speed drop in Modern History. Schedule automatically optimized: +45 mins allocated for rapid revision tomorrow.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. AI STUDY PLANNER PREVIEW (HIGHEST PRIORITY) ================= -->
+        <section id="planner" class="planner-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="section-badge">Interactive AI Studio</div>
+                    <h2 class="section-title">Experience the <span class="gradient-text">AI Planner</span> in Action</h2>
+                    <p class="section-subtitle">
+                        Select your target exam, timeframe, and study velocity below. See how PrepPilot AI dynamically synthesizes your personalized roadmap in real-time.
+                    </p>
+                </div>
+
+                <div class="planner-interactive-wrapper glass-panel">
+                    <!-- Left Control Panel -->
+                    <div class="planner-controls">
+                        <h3 class="panel-heading">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                            Plan Parameters
+                        </h3>
+
+                        <div class="form-group">
+                            <label for="planner-exam-select">Select Target Exam Track</label>
+                            <div class="select-wrapper">
+                                <select id="planner-exam-select" class="custom-select">
+                                    <option value="upsc">UPSC Civil Services (IAS/IPS)</option>
+                                    <option value="tech_ai" selected>Tech: AI & ML Engineer Track</option>
+                                    <option value="ssc">SSC CGL (Combined Graduate Level)</option>
+                                    <option value="ielts">IELTS Academic (Band 8.0+ Target)</option>
+                                    <option value="gre">GRE General Test (330+ Target)</option>
+                                    <option value="gate">GATE Computer Science & IT</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="label-with-val">
+                                <label for="planner-days-slider">Days Remaining Until Exam</label>
+                                <span id="days-val-display" class="val-badge">60 Days</span>
+                            </div>
+                            <input type="range" id="planner-days-slider" min="15" max="180" value="60" class="custom-slider">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Daily Study Commitment</label>
+                            <div class="hours-selector" id="hours-btn-group">
+                                <button type="button" class="hour-btn" data-hours="2">2 hrs/day</button>
+                                <button type="button" class="hour-btn active" data-hours="4">4 hrs/day</button>
+                                <button type="button" class="hour-btn" data-hours="6">6 hrs/day</button>
+                                <button type="button" class="hour-btn" data-hours="8">8 hrs/day</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Study Strategy Mode</label>
+                            <div class="strategy-selector" id="strategy-btn-group">
+                                <button type="button" class="strategy-btn active" data-strategy="balanced">Balanced</button>
+                                <button type="button" class="strategy-btn" data-strategy="sprint">High Sprint</button>
+                                <button type="button" class="strategy-btn" data-strategy="revision">Deep Revision</button>
+                            </div>
+                        </div>
+
+                        <button id="generate-plan-btn" class="btn-primary btn-block">
+                            <span id="btn-text">Generate AI Study Plan</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path d="M12 8v4l3 3"></path></svg>
+                        </button>
+                    </div>
+
+                    <!-- Right Display Dashboard Mockup -->
+                    <div class="planner-output-display">
+                        <div class="output-header-bar">
+                            <div class="output-title-group">
+                                <span class="pulse-indicator"></span>
+                                <h4 id="output-exam-title">AI Study Roadmap • Tech: AI & ML Engineer</h4>
+                            </div>
+                            <div class="output-metrics-summary">
+                                <div class="summary-metric">
+                                    <span class="m-label">Total Time Budget</span>
+                                    <span id="out-total-hours" class="m-val">240 Hours</span>
+                                </div>
+                                <div class="summary-metric">
+                                    <span class="m-label">Projected Readiness</span>
+                                    <span id="out-readiness" class="m-val text-emerald">92%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Roadmap View -->
+                        <div class="roadmap-timeline" id="roadmap-timeline-container">
+                            <!-- Dynamic Content Rendered via JavaScript -->
+                        </div>
+
+                        <div class="ai-insight-box">
+                            <div class="insight-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"></path></svg>
+                                AI Co-Pilot Recommendation
+                            </div>
+                            <p id="ai-insight-text">
+                                Based on your 60-day target for AI & ML, the engine prioritized Deep Learning Architecture & System Design first to maximize high-yield scoring units.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. FEATURES (MODERN BENTO GRID) ================= -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="section-badge">Intelligent Core</div>
+                    <h2 class="section-title">Built for <span class="gradient-text">High-Performance</span> Preparation</h2>
+                    <p class="section-subtitle">
+                        Every tool you need to learn faster, retain information longer, and perform under exam pressure.
+                    </p>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Card 1: Large Bento -->
+                    <div class="bento-card bento-span-2 glass-panel">
+                        <div class="bento-content">
+                            <div class="bento-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            </div>
+                            <span class="bento-tag">Adaptive Engine</span>
+                            <h3>Dynamic Schedule Re-Balancing</h3>
+                            <p>Life happens. If you miss a study session or struggle with a topic, PrepPilot AI instantly redistributes your upcoming syllabus without causing burn-out.</p>
+                        </div>
+                        <div class="bento-preview-visual visual-rebalance">
+                            <div class="v-bar bar-1"><span>Mon</span><div class="v-fill" style="height: 80%;"></div></div>
+                            <div class="v-bar bar-2"><span>Tue</span><div class="v-fill missed" style="height: 30%;"></div></div>
+                            <div class="v-bar bar-3"><span>Wed</span><div class="v-fill adjusted" style="height: 95%;"></div></div>
+                            <div class="v-bar bar-4"><span>Thu</span><div class="v-fill" style="height: 75%;"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bento-card glass-panel">
+                        <div class="bento-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                        </div>
+                        <span class="bento-tag">Interview Coach</span>
+                        <h3>AI Mock Interview Bot</h3>
+                        <p>Practice voice and text interviews tailored to your specific exam format with real-time feedback on confidence, accuracy, and depth.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bento-card glass-panel">
+                        <div class="bento-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        </div>
+                        <span class="bento-tag">Precision Focus</span>
+                        <h3>Weakness Radar & Analytics</h3>
+                        <p>Pinpoint knowledge gaps before the test. Focus your valuable study hours where they yield the maximum score improvement.</p>
+                    </div>
+
+                    <!-- Card 4: Large Bento -->
+                    <div class="bento-card bento-span-2 glass-panel">
+                        <div class="bento-content">
+                            <div class="bento-icon">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                            </div>
+                            <span class="bento-tag">Content Processing</span>
+                            <h3>Instant Notes & Flashcard Generator</h3>
+                            <p>Upload raw PDFs, syllabus guides, or lecture notes. The AI distills complex topics into digestible summary sheets, key formulas, and active recall flashcards.</p>
+                        </div>
+                        <div class="bento-preview-visual visual-flashcard">
+                            <div class="mini-card mini-1">Formula: Gradient Descent Update Rule</div>
+                            <div class="mini-card mini-2">Key Concept: High Yield Topic Highlighted</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. EXAM CATEGORIES ================= -->
+        <section id="categories" class="categories-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="section-badge">Comprehensive Directory</div>
+                    <h2 class="section-title">Tailored Roadmaps for <span class="gradient-text">Every Career Track</span></h2>
+                    <p class="section-subtitle">
+                        Browse our extensive catalog of specialized AI prep modules designed for top national and global exams.
+                    </p>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="filter-controls-wrapper">
+                    <div class="search-box glass-panel">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="exam-search-input" placeholder="Search exam (e.g. UPSC, AWS, IELTS, SSC, GRE)...">
+                    </div>
+                    <div class="filter-pills" id="category-filter-pills">
+                        <button class="filter-pill active" data-category="all">All Exams</button>
+                        <button class="filter-pill" data-category="govt">Government</button>
+                        <button class="filter-pill" data-category="tech">Tech & Engineering</button>
+                        <button class="filter-pill" data-category="intl">International</button>
+                        <button class="filter-pill" data-category="mgmt">Management</button>
+                    </div>
+                </div>
+
+                <!-- Exam Cards Grid -->
+                <div class="exams-grid" id="exams-grid-container">
+                    <!-- Govt Exams -->
+                    <div class="exam-card glass-panel" data-category="govt" data-keywords="upsc ias ips civil services general studies">
+                        <div class="exam-card-header">
+                            <span class="exam-badge govt">Government</span>
+                            <span class="exam-rating">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.9
+                            </span>
+                        </div>
+                        <h3>UPSC Civil Services</h3>
+                        <p>Complete IAS/IPS prelims & mains roadmap with daily GS paper schedules and answer writing feedback.</p>
+                        <div class="exam-footer">
+                            <span>1,200+ Topics</span>
+                            <span class="text-accent">Explore Roadmap &rarr;</span>
+                        </div>
+                    </div>
+
+                    <div class="exam-card glass-panel" data-category="govt" data-keywords="ssc cgl chsl quantitative aptitude reasoning english">
+                        <div class="exam-card-header">
+                            <span class="exam-badge govt">Government</span>
+                            <span class="exam-rating">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.8
+                            </span>
+                        </div>
+                        <h3>SSC CGL / CHSL</h3>
+                        <p>Speed-focused adaptive planner for Tier 1 & Tier 2 Quant, Reasoning, English, and General Awareness.</p>
+                        <div class="exam-footer">
+                            <span>850+ Topics</span>
+                            <span class="text-accent">Explore Roadmap &rarr;</span>
+                        </div>
+                    </div>
+
+                    <!-- Tech Exams -->
+                    <div class="exam-card glass-panel" data-category="tech" data-keywords="ai ml artificial intelligence machine learning data science python engineer">
+                        <div class="exam-card-header">
+                            <span class="exam-badge tech">Tech & AI</span>
+                            <span class="exam-rating">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.95
+                            </span>
+                        </div>
+                        <h3>AI & ML Engineer Track</h3>
+                        <p>Structured preparation for Machine Learning fundamentals, Deep Learning, MLOps, and System Design interviews.</p>
+                        <div class="exam-footer">
+                            <span>640+ Topics</span>
+                            <span class="text-accent">Explore Roadmap &rarr;</span>
+                        </div>
+                    </div>
+
+                    <div class="exam-card glass-panel" data-category="tech" data-keywords="gate computer science it algorithms data structures system design">
+                        <div class="exam-card-header">
+                            <span class="exam-badge tech">Tech & AI</span>
+                            <span class="exam-rating">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.85
+                            </span>
+                        </div>
+                        <h3>GATE Computer Science</h3>
+                        <p>In-depth conceptual revision for Data Structures, Algorithms, OS, DBMS, and Engineering Mathematics.</p>
+                        <div class="exam-footer">
+                            <span>780+ Topics</span>
+                            <span class="text-accent">Explore Roadmap &rarr;</span>
+                        </div>
+                    </div>
+
+                    <!-- International Exams -->
+                    <div class="exam-card glass-panel" data-category="intl" data-keywords="ielts academic general listening reading writing speaking band">
+                        <div class="exam-card-header">
+                            <span class="exam-badge intl">International</span>
+                            <span class="exam-rating">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.9
+                            </span>
+                        </div>
+                        <h3>IELTS Academic & General</h3>
+                        <p>Target Band 8.0+ with specialized AI scoring for Writing Task 2 and Speaking practice modules.</p>
+                        <div class="exam-footer">
+                            <span>420+ Modules</span>
+                            <span class="text-accent">Explore Roadmap &rarr;</span>
+                        </div>
+                    </div>
+
+                    <div class="exam-card glass-panel" data-category="intl" data-keywords="gre general verbal reasoning quantitative reasoning analytical writing">
+                        <div class="exam-card-header">
+                            <span class="exam-badge intl">International</span>
+                            <span class="exam-rating">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.88
+                            </span>
+                        </div>
+                        <h3>GRE General Test</h3>
+                        <p>Vocab mastery, Quant problem-solving speed, and Analytical Writing evaluation engineered for 330+ scores.</p>
+                        <div class="exam-footer">
+                            <span>510+ Modules</span>
+                            <span class="text-accent">Explore Roadmap &rarr;</span>
+                        </div>
+                    </div>
+
+                    <!-- Management Exams -->
+                    <div class="exam-card glass-panel" data-category="mgmt" data-keywords="cat iim mba varc dilr qa quantitative aptitude">
+                        <div class="exam-card-header">
+                            <span class="exam-badge mgmt">Management</span>
+                            <span class="exam-rating">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.92
+                            </span>
+                        </div>
+                        <h3>CAT / MBA Entrances</h3>
+                        <p>99+ percentile roadmap for VARC, DILR puzzles, and high-speed Quant revision cycles.</p>
+                        <div class="exam-footer">
+                            <span>900+ Topics</span>
+                            <span class="text-accent">Explore Roadmap &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 6. STATISTICS ================= -->
+        <section id="stats" class="stats-section">
+            <div class="container">
+                <div class="stats-grid glass-panel">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500000">0</span><span class="stat-plus">+</span>
+                        <span class="stat-desc">Study Hours Optimized</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="94.8" data-decimals="1">0</span><span class="stat-plus">%</span>
+                        <span class="stat-desc">First-Attempt Pass Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="120">0</span><span class="stat-plus">+</span>
+                        <span class="stat-desc">Exam Frameworks</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="4.9" data-decimals="1">0</span><span class="stat-plus">/5</span>
+                        <span class="stat-desc">Learner Rating</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. TESTIMONIALS (PLACEHOLDER CONTENT) ================= -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="section-badge">Student Proof</div>
+                    <h2 class="section-title">Success Stories from <span class="gradient-text">High Scorers</span></h2>
+                    <p class="section-subtitle">
+                        See how candidates turned ambitious study goals into verified rank achievements.
+                    </p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <p class="testimonial-quote">
+                            "PrepPilot AI's adaptive scheduling saved my UPSC preparation. When work got busy, it automatically restructured my revision without stressing me out."
+                        </p>
+                        <div class="author-info">
+                            <div class="author-avatar">AP</div>
+                            <div>
+                                <strong>Ananya Patel</strong>
+                                <span class="author-role">Cleared UPSC Civil Services • AIR 54</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <p class="testimonial-quote">
+                            "The weakness radar pinpointed my exact gaps in Machine Learning algorithms. I jumped from scoring 65% to 92% on practice mocks in just 4 weeks."
+                        </p>
+                        <div class="author-info">
+                            <div class="author-avatar">RD</div>
+                            <div>
+                                <strong>Rohan Das</strong>
+                                <span class="author-role">AI Engineer Track • Placed at Top Tech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <p class="testimonial-quote">
+                            "Practicing with the AI Mock Interview Coach gave me the exact confidence boost I needed for my IELTS Speaking test. Got Band 8.5 on my first attempt!"
+                        </p>
+                        <div class="author-info">
+                            <div class="author-avatar">SK</div>
+                            <div>
+                                <strong>Sneha Kapoor</strong>
+                                <span class="author-role">IELTS Candidate • Band 8.5 Achieved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. FAQ ACCORDION ================= -->
+        <section id="faq" class="faq-section">
+            <div class="container small-container">
+                <div class="section-header text-center">
+                    <div class="section-badge">Clear Answers</div>
+                    <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                    <p class="section-subtitle">
+                        Everything you need to know about the PrepPilot AI learning engine.
+                    </p>
+                </div>
+
+                <div class="faq-accordion" id="faq-accordion-container">
+                    <div class="faq-item glass-panel">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-btn-1">
+                            <span>How does the AI Study Planner synthesize my schedule?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq-ans-1" class="faq-content" role="region" aria-labelledby="faq-btn-1" hidden>
+                            <p>Our engine analyzes historical exam syllabi, topic difficulty weightage, and your total available study days. It then constructs a prioritized daily sequence that balances new learning with spaced-repetition revision.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-panel">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-btn-2">
+                            <span>What happens if I fall behind on my daily study goals?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq-ans-2" class="faq-content" role="region" aria-labelledby="faq-btn-2" hidden>
+                            <p>No manual tweaking needed! The AI detects missed sessions and automatically re-balances your upcoming schedule. It prioritizes high-impact topics to ensure you remain on track for your target exam date.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-panel">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-btn-3">
+                            <span>Can I customize the planner for unlisted niche exams?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq-ans-3" class="faq-content" role="region" aria-labelledby="faq-btn-3" hidden>
+                            <p>Yes. You can input custom syllabus topics, target dates, and exam formats. PrepPilot AI will create a structured study timeline tailored to your exact curriculum.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-panel">
+                        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-4" id="faq-btn-4">
+                            <span>Is the AI Study Planner Preview free to try?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq-ans-4" class="faq-content" role="region" aria-labelledby="faq-btn-4" hidden>
+                            <p>Yes! You can test and experience the full interactive study roadmap preview right here on the landing page without needing to sign up or create an account.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 9. CTA ================= -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card glass-panel text-center">
+                    <div class="cta-glow-orb" aria-hidden="true"></div>
+                    <div class="pill-badge mb-3">Get Started Today</div>
+                    <h2 class="cta-title">Ready to Elevate Your Exam Preparation?</h2>
+                    <p class="cta-subtitle">
+                        Test the interactive AI planner preview now and build your path to top scores.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="#planner" class="btn-primary btn-lg">
+                            <span>Launch AI Planner Preview</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= 10. SIMPLE FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="brand-logo">
+                    <span class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path></svg>
+                    </span>
+                    <span class="brand-name">PrepPilot<span class="accent-text">.AI</span></span>
+                </a>
+                <p class="footer-desc">AI-powered study planning & adaptive exam preparation platform.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#planner">AI Planner</a>
+                <a href="#features">Features</a>
+                <a href="#categories">Exams</a>
+                <a href="#stats">Metrics</a>
+                <a href="#faq">FAQ</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> PrepPilot AI. All rights reserved. Designed for high performance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="js/script.js"></script>
+</body>
+</html>

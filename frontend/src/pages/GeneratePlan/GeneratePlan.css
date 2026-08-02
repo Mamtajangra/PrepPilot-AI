@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+body{
+background:#0D1117;
+}
+
+/* ==========================
+   Container
+========================== */
+
+.generate-container{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px;
+
+background:#0D1117;
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.generate-card{
+
+width:100%;
+
+max-width:760px;
+
+background:#1C2128;
+
+border:1px solid #30363D;
+
+border-radius:24px;
+
+padding:40px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+animation:fadeUp .5s ease;
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+.planner-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+.planner-header h1{
+
+font-size:34px;
+
+font-weight:700;
+
+color:#F8FAFC;
+
+margin-bottom:8px;
+
+}
+
+.planner-header p{
+
+color:#94A3B8;
+
+line-height:1.7;
+
+max-width:460px;
+
+}
+
+.planner-icon{
+
+width:70px;
+
+height:70px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:20px;
+
+background:rgba(20,184,166,.12);
+
+border:1px solid rgba(20,184,166,.20);
+
+color:#14B8A6;
+
+}
+
+/* ==========================
+   Success Message
+========================== */
+
+.success-box{
+
+padding:15px;
+
+margin-bottom:25px;
+
+border-radius:12px;
+
+background:rgba(34,197,94,.12);
+
+border:1px solid rgba(34,197,94,.20);
+
+color:#22C55E;
+
+font-weight:600;
+
+}
+
+/* ==========================
+   Form
+========================== */
+
+form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+}
+
+.form-group{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.form-group label{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:10px;
+
+font-size:15px;
+
+font-weight:600;
+
+color:#CBD5E1;
+
+}
+
+.form-group input{
+
+width:100%;
+
+height:56px;
+
+padding:0 18px;
+
+border:1px solid #30363D;
+
+border-radius:14px;
+
+background:#161B22;
+
+color:#F8FAFC;
+
+font-size:15px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.form-group input::placeholder{
+
+color:#94A3B8;
+
+}
+
+.form-group input:focus{
+
+border-color:#14B8A6;
+
+box-shadow:0 0 0 3px rgba(20,184,166,.15);
+
+}
+
+/* ==========================
+   Button
+========================== */
+
+.generate-btn{
+
+margin-top:10px;
+
+width:100%;
+
+height:56px;
+
+border:none;
+
+border-radius:14px;
+
+background:#14B8A6;
+
+color:#FFFFFF;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.generate-btn:hover{
+
+background:#0F766E;
+
+transform:translateY(-2px);
+
+}
+
+.generate-btn:disabled{
+
+opacity:.7;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+/* ==========================
+   Animation
+========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+.generate-container{
+
+padding:20px;
+
+}
+
+.generate-card{
+
+padding:25px;
+
+}
+
+.planner-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.planner-header h1{
+
+font-size:28px;
+
+}
+
+.planner-icon{
+
+width:60px;
+
+height:60px;
+
+}
+
+}

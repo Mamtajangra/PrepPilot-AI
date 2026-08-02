@@ -1,0 +1,297 @@
+/* ===================================
+   Recent Plans
+=================================== */
+
+.recent-title{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.recent-title svg{
+
+color:#14B8A6;
+
+}
+
+.recent-title h2{
+
+font-size:24px;
+
+font-weight:700;
+
+color:#F8FAFC;
+
+}
+
+/* ===================================
+   Header
+=================================== */
+
+.recent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+
+/* ===================================
+   View All Button
+=================================== */
+
+.view-all-btn {
+  border: none;
+  cursor: pointer;
+
+  padding: 10px 18px;
+
+  border-radius: 12px;
+
+  background: #14b8a6;
+  color: white;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.view-all-btn{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+border:none;
+
+cursor:pointer;
+
+padding:10px 18px;
+
+border-radius:12px;
+
+background:#14B8A6;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+/* ===================================
+   Recent List
+=================================== */
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ===================================
+   Recent Card
+=================================== */
+
+.recent-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 18px;
+
+  background: #161b22;
+
+  border: 1px solid #30363d;
+
+  border-radius: 16px;
+
+  transition: all 0.3s ease;
+}
+
+.recent-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #14b8a6;
+
+  box-shadow: 0 12px 30px rgba(20, 184, 166, 0.12);
+}
+
+/* ===================================
+   Avatar
+=================================== */
+
+.avatar {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(20, 184, 166, 0.12);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+
+  color: #14b8a6;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ===================================
+   Info
+=================================== */
+
+.recent-info {
+  flex: 1;
+}
+
+.recent-info h3 {
+  margin-bottom: 6px;
+
+  font-size: 18px;
+
+  color: #f8fafc;
+}
+
+.recent-info p {
+  margin-bottom: 10px;
+
+  font-size: 14px;
+
+  color: #94a3b8;
+}
+
+/* ===================================
+   Date Chip
+=================================== */
+
+.date-chip{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:6px;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+background:rgba(20,184,166,.12);
+
+border:1px solid rgba(20,184,166,.20);
+
+color:#14B8A6;
+
+font-size:12px;
+
+font-weight:600;
+
+}
+
+/* ===================================
+   Status Badge
+=================================== */
+
+.badge {
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+.badge.completed {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.badge.pending {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.badge.in-progress {
+  background: rgba(20, 184, 166, 0.12);
+  color: #14b8a6;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+}
+
+/* ===================================
+   Empty State
+=================================== */
+
+.recent-empty {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 45px 20px;
+
+  text-align: center;
+}
+
+.recent-empty .empty-icon{
+
+width:60px;
+
+height:60px;
+
+margin-bottom:18px;
+
+color:#14B8A6;
+
+}
+
+.recent-empty h3 {
+  margin-bottom: 8px;
+
+  font-size: 22px;
+
+  color: #f8fafc;
+}
+
+.recent-empty p {
+  color: #94a3b8;
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media (max-width: 768px) {
+
+  .recent-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .recent-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge {
+    align-self: flex-start;
+  }
+
+}

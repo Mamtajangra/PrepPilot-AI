@@ -1,0 +1,185 @@
+.dashboard-showcase {
+  padding: 100px 20px;
+  background: #0D1117;
+}
+
+.showcase-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.showcase-content {
+  flex: 1;
+}
+
+.showcase-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 18px;
+
+  background: rgba(20,184,166,.10);
+
+  border: 1px solid rgba(20,184,166,.25);
+
+  color: #14B8A6;
+
+  border-radius: 999px;
+
+  font-size: .9rem;
+
+  font-weight: 600;
+
+  margin-bottom: 22px;
+}
+
+.showcase-content h2 {
+  font-size: 2.8rem;
+
+  color: #E5E7EB;
+
+  line-height: 1.2;
+
+  margin-bottom: 22px;
+}
+
+.showcase-content p {
+  color: #9CA3AF;
+
+  line-height: 1.9;
+
+  margin-bottom: 30px;
+
+  max-width: 560px;
+}
+
+.dashboard-features {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  padding: 0;
+}
+
+.dashboard-features li {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #CBD5E1;
+
+  font-weight: 500;
+}
+
+.dashboard-features li::before {
+  content: "✓";
+
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(20,184,166,.12);
+
+  color: #14B8A6;
+
+  font-size: .9rem;
+
+  flex-shrink: 0;
+}
+
+.showcase-image {
+  flex: 1;
+
+  position: relative;
+}
+
+.showcase-image::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -25px;
+
+  background: radial-gradient(
+      circle,
+      rgba(20,184,166,.18),
+      transparent 70%
+  );
+
+  filter: blur(35px);
+
+  z-index: -1;
+}
+
+.showcase-image img {
+  width: 100%;
+
+  border-radius: 22px;
+
+  border: 1px solid #30363D;
+
+  box-shadow:
+      0 25px 50px rgba(0,0,0,.45);
+
+  transition: all .35s ease;
+}
+
+.showcase-image img:hover {
+  transform: translateY(-10px) scale(1.02);
+
+  box-shadow:
+      0 30px 60px rgba(0,0,0,.55),
+      0 0 30px rgba(20,184,166,.15);
+}
+
+@media(max-width:950px){
+
+.showcase-container{
+
+flex-direction:column;
+
+text-align:center;
+}
+
+.showcase-content p{
+
+margin:0 auto 30px;
+}
+
+.dashboard-features{
+
+align-items:center;
+}
+
+.showcase-content h2{
+
+font-size:2.2rem;
+}
+}
+
+@media(max-width:600px){
+
+.dashboard-showcase{
+
+padding:70px 20px;
+}
+
+.showcase-content h2{
+
+font-size:2rem;
+}
+}
