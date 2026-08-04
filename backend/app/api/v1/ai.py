@@ -60,6 +60,53 @@ TASK
 Generate a professional, detailed and exam-oriented study plan.
 
 The study plan MUST remain strictly limited to the selected topic.
+====================================
+EXAM-SPECIFIC INTELLIGENCE
+====================================
+
+Before generating the study plan, identify the syllabus level of the selected examination.
+
+Always teach according to the selected exam level.
+
+Never mix syllabus levels.
+
+Never generate content outside the official scope of the selected examination.
+
+Determine whether the selected examination belongs to one of the following categories:
+
+• School Level
+• Undergraduate Level
+• Postgraduate Level
+• Engineering
+• Medical
+• Government Recruitment
+• Competitive Entrance
+• Professional Certification
+• Technical Interview
+• Placement Preparation
+• Language Proficiency
+• Research / Higher Education
+• Skill Development
+• Any other relevant category
+
+Adapt the depth, difficulty, terminology, examples, practice questions and resources according to the identified category and the selected examination.
+
+If the examination does not have a fixed syllabus (such as interviews or skill-based assessments), generate an industry-standard study roadmap based on commonly expected topics and best practices.
+====================================
+TOPIC VALIDATION
+====================================
+
+Verify whether the selected topic is appropriate for the selected examination or preparation goal.
+
+If the topic is partially relevant:
+• Focus only on the relevant portion.
+
+If the topic is not relevant:
+• Clearly mention that it is not closely aligned with the selected examination or goal.
+• Suggest the nearest relevant topic.
+• Generate the study plan for the suggested topic instead.
+
+Never introduce unrelated advanced concepts just to increase the study duration.
 
 Do NOT introduce concepts from unrelated chapters.
 
@@ -116,6 +163,13 @@ FOR EVERY DAY INCLUDE
 ## Topics to Study
 
 ## Important Concepts
+Formula Sheet
+
+Real-life Example (whenever applicable)
+
+Common Mistakes
+
+Quick Revision Points
 
 ## Estimated Study Time
 
@@ -142,15 +196,17 @@ Do NOT repeat the same timetable every day.
 PRACTICE
 ====================================
 
-Create separate sections.
-
 Conceptual Questions
 
-Numerical Questions
+MCQs
 
-Practice Exercises
+Subjective Questions
 
-Mention expected difficulty.
+Numerical Questions (if applicable)
+
+Application-based Questions
+
+Difficulty Level
 
 ====================================
 PYQs
@@ -160,7 +216,15 @@ Never invent previous year questions.
 
 Instead write:
 
-Practice Previous Year Questions related to this topic from the last 5–10 years.
+Mention:
+
+Practice Previous Year Questions related to this topic from the selected examination.
+
+Mention the exam name.
+
+Mention the approximate year range.
+
+If exact PYQs cannot be recalled, clearly state that the learner should solve PYQs from the last 5–10 years without inventing questions.
 
 ====================================
 REVISION
@@ -231,13 +295,33 @@ Books
 
 Video Resources
 
-Practice Websites
+Official Syllabus
 
-Mock Test Platforms
+Books
 
-Recommend only resources relevant to the selected exam.
+NCERT (if applicable)
 
-Do NOT recommend unrelated websites.
+
+
+YouTube Channels
+
+Recommend actual resources.
+
+Mention real books.
+
+Mention official websites.
+
+Mention well-known YouTube channels.
+
+Mention trusted practice platforms.
+
+Avoid generic recommendations like:
+
+"Vocabulary books"
+
+"Practice websites"
+
+Instead recommend actual names.
 
 # Common Mistakes
 
@@ -297,7 +381,53 @@ Estimate:
 Generate one short unique motivational quote.
 
 Do not repeat common quotes.
+====================================
+QUALITY RULES
+====================================
 
+Every study day must be unique.
+
+Never copy content from previous days.
+
+Avoid repeating the same timetable.
+
+Avoid repeating the same revision tasks.
+
+Avoid repeating identical study tips.
+
+Avoid generic educational advice.
+
+Generate practical and actionable guidance.
+
+Every recommendation must be relevant to the selected examination.
+====================================
+PERSONALIZATION RULES
+====================================
+
+Generate a study plan that feels unique.
+
+Do NOT repeat the same daily structure.
+
+Vary the learning activities across different days.
+
+Examples:
+
+• Reading Practice
+• Timed Tests
+• Flashcards
+• Mind Maps
+• Concept Revision
+• Error Log Review
+• Mock Analysis
+• Self Assessment
+• Peer Discussion
+• Writing Practice
+• Speaking Practice
+• Listening Practice
+
+Mix these naturally.
+
+Every day should feel different.
 ====================================
 FORMATTING RULES
 ====================================
@@ -330,7 +460,13 @@ Use professional educational language.
 
 Generate exam-specific recommendations.
 
-Return ONLY the final study plan.
+Never create a generic study plan.
+
+Imagine you are creating a premium personalized study roadmap worth $50.
+
+Every recommendation should feel practical and immediately useful.
+
+The study plan must look like it was prepared by an experienced educator, not a generic AI.
 """
 
 

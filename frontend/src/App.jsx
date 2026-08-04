@@ -12,9 +12,9 @@ import CalendarPage from "./pages/Calendar/CalendarPage";
 import Analytics from "./pages/Analytics/Analytics";
 import AIPlanner from "./pages/AIPlanner/AIPlanner";
 import Progress from "./pages/Progress/Progress";
-
+import MyQuizzes from "./pages/MyQuizzes/MyQuizzes";
 import ProtectedRoute from "./routes/ProtectedRoute";
-
+import AINotes from "./pages/AINotes/AINotes";
 function App() {
   return (
     <Routes>
@@ -24,7 +24,22 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/ai-quiz" element={<AIQuiz />} />
+<Route
+  path="/ai-quiz"
+  element={
+    <ProtectedRoute>
+      <AIQuiz />
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/ai-notes"
+  element={
+    <ProtectedRoute>
+      <AINotes />
+    </ProtectedRoute>
+  }
+/>
       {/* Protected Routes */}
 
       <Route
@@ -98,6 +113,14 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route
+  path="/my-quizzes"
+  element={
+    <ProtectedRoute>
+      <MyQuizzes />
+    </ProtectedRoute>
+  }
+/>
 
       <Route
         path="/progress"

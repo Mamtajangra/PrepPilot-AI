@@ -11,6 +11,7 @@ export const generateAIQuiz = async (formData) => {
       difficulty: formData.difficulty,
       question_type: formData.question_type,
       number_of_questions: Number(formData.number_of_questions),
+        language: formData.language,
     }
   );
 

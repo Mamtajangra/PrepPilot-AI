@@ -193,328 +193,364 @@ function AIQuiz() {
 
     return (
 
-    <div className="ai-page">
+<div className="ai-quiz-page">
 
-      <Sidebar />
+<Sidebar />
 
-      <main className="ai-content">
+<main className="ai-quiz-content">
 
-        <div className="page-title">
+<div className="ai-quiz-title">
 
-          <Bot size={34} />
+<Bot size={34} />
 
-          <h1>AI Quiz Generator</h1>
+<h1>AI Quiz Generator</h1>
 
-        </div>
+</div>
 
-        <p className="subtitle">
+<p className="ai-quiz-subtitle">
 
-          Generate AI-powered quizzes for any exam.
+Generate AI-powered quizzes for any exam.
 
-        </p>
+</p>
 
-        <div className="planner-grid">
+<div className="ai-quiz-grid">
 
-          {/* ================= FORM ================= */}
+{/* ================= FORM ================= */}
 
-          <form
-            className="ai-form"
-            onSubmit={handleSubmit}
-          >
+<form
 
-            <div className="form-group">
+className="ai-quiz-form"
 
-              <label>Exam</label>
+onSubmit={handleSubmit}
 
-              <input
-                type="text"
-                name="exam"
-                value={form.exam}
-                onChange={handleChange}
-                placeholder="GATE / UPSC / HTET"
-                required
-              />
+>
 
-            </div>
+<div className="ai-quiz-form-group">
 
-            <div className="form-group">
+<label>Exam</label>
 
-              <label>Subject</label>
+<input
+type="text"
+name="exam"
+value={form.exam}
+onChange={handleChange}
+placeholder="GATE / UPSC / HTET"
+required
+/>
 
-              <input
-                type="text"
-                name="subject"
-                value={form.subject}
-                onChange={handleChange}
-                placeholder="Mathematics"
-                required
-              />
+</div>
 
-            </div>
+<div className="ai-quiz-form-group">
 
-            <div className="form-group">
+<label>Subject</label>
 
-              <label>Topic</label>
+<input
+type="text"
+name="subject"
+value={form.subject}
+onChange={handleChange}
+placeholder="Mathematics"
+required
+/>
 
-              <input
-                type="text"
-                name="topic"
-                value={form.topic}
-                onChange={handleChange}
-                placeholder="Matrices"
-                required
-              />
+</div>
 
-            </div>
+<div className="ai-quiz-form-group">
 
-            <div className="form-group">
+<label>Topic</label>
 
-              <label>Difficulty</label>
+<input
+type="text"
+name="topic"
+value={form.topic}
+onChange={handleChange}
+placeholder="Matrices"
+required
+/>
 
-              <select
-                name="difficulty"
-                value={form.difficulty}
-                onChange={handleChange}
-              >
+</div>
 
-                <option value="Easy">Easy</option>
-                <option value="Medium">Medium</option>
-                <option value="Hard">Hard</option>
+<div className="ai-quiz-form-group">
 
-              </select>
+<label>Difficulty</label>
 
-            </div>
+<select
+name="difficulty"
+value={form.difficulty}
+onChange={handleChange}
+>
 
-            <div className="form-group">
+<option value="Easy">Easy</option>
+<option value="Medium">Medium</option>
+<option value="Hard">Hard</option>
 
-              <label>Question Type</label>
+</select>
 
-              <select
-                name="question_type"
-                value={form.question_type}
-                onChange={handleChange}
-              >
+</div>
 
-                <option value="MCQ">MCQ</option>
-                <option value="True / False">True / False</option>
-                <option value="Short Answer">Short Answer</option>
+<div className="ai-quiz-form-group">
 
-              </select>
+<label>Question Type</label>
 
-            </div>
+<select
+name="question_type"
+value={form.question_type}
+onChange={handleChange}
+>
 
-            <div className="form-group">
+<option value="MCQ">MCQ</option>
+<option value="True / False">True / False</option>
+<option value="Short Answer">Short Answer</option>
 
-              <label>Number of Questions</label>
+</select>
 
-              <input
-                type="number"
-                min="5"
-                max="50"
-                name="number_of_questions"
-                value={form.number_of_questions}
-                onChange={handleChange}
-              />
+</div>
 
-            </div>
+<div className="ai-quiz-form-group">
 
-            <button
-              type="submit"
-              disabled={loading}
-            >
+<label>Number of Questions</label>
 
-              {
+<input
+type="number"
+min="5"
+max="50"
+name="number_of_questions"
+value={form.number_of_questions}
+onChange={handleChange}
+/>
 
-                loading ?
+</div>
 
-                  <>
+<button
 
-                    <LoaderCircle
-                      size={18}
-                      className="spin"
-                    />
+type="submit"
 
-                    Generating...
+className="ai-quiz-btn-generate"
 
-                  </>
+disabled={loading}
 
-                  :
+>
 
-                  <>
+{
 
-                    <Sparkles size={18} />
+loading ?
 
-                    Generate AI Quiz
+<>
 
-                  </>
+<LoaderCircle
 
-              }
+size={18}
 
-            </button>
+className="spin"
 
-          </form>
+/>
 
+Generating...
+
+</>
+
+:
+
+<>
+
+<Sparkles size={18} />
+
+Generate AI Quiz
+
+</>
+
+}
+
+</button>
+
+</form>
           {/* ================= RESULT ================= */}
 
-          <div className="result-box">
+         {/* ================= RESULT ================= */}
 
-            <div className="result-header">
+<div className="ai-quiz-result">
 
-              <h2>
+<div className="ai-quiz-result-header">
 
-                <FileText size={22} />
+<h2 className="ai-quiz-result-title">
 
-                Generated Quiz
+<FileText size={22}/>
 
-              </h2>
+Generated Quiz
 
-            </div>
+</h2>
 
-            {
+</div>
 
-              loading ?
+{
 
-                <div className="loading-box">
+loading ?
 
-                  <LoaderCircle
-                    size={42}
-                    className="spin"
-                  />
+<div className="ai-quiz-loading">
 
-                  <h3>
+<LoaderCircle
 
-                    Generating Quiz...
+size={42}
 
-                  </h3>
+className="spin"
 
-                  <p>
+/>
 
-                    AI is preparing your personalized quiz.
+<h3 className="ai-quiz-loading-title">
 
-                  </p>
+Generating Quiz...
 
-                </div>
+</h3>
 
-                :
+<p className="ai-quiz-loading-text">
 
-                quiz ?
+AI is preparing your personalized quiz.
 
-                  <>
+</p>
 
-                    <div className="markdown-result">
+</div>
 
-                      <ReactMarkdown>
+:
 
-                        {quiz}
+quiz ?
 
-                      </ReactMarkdown>
+<>
 
-                    </div>
+<div className="ai-quiz-markdown">
 
-                    <div className="plan-actions">
+<ReactMarkdown>
 
-                      <button
-                        type="button"
-                        className="action-btn"
-                        onClick={handleExportPDF}
-                      >
+{quiz}
 
-                        <Download size={18} />
+</ReactMarkdown>
 
-                        PDF
+</div>
 
-                      </button>
+<div className="ai-quiz-actions">
 
-                      <button
-                        type="button"
-                        className="action-btn"
-                        onClick={handleRegenerate}
-                      >
+<button
 
-                        <RefreshCcw size={18} />
+type="button"
 
-                        Regenerate
+className="ai-quiz-btn"
 
-                      </button>
+onClick={handleExportPDF}
 
-                      <button
-                        type="button"
-                        className="action-btn"
-                        onClick={handleCopy}
-                      >
+>
 
-                        <Clipboard size={18} />
+<Download size={18}/>
 
-                        Copy
+PDF
 
-                      </button>
+</button>
 
-                      <button
-                        type="button"
-                        className="action-btn danger-btn"
-                        onClick={handleClear}
-                      >
+<button
 
-                        <Trash2 size={18} />
+type="button"
 
-                        Clear
+className="ai-quiz-btn"
 
-                      </button>
+onClick={handleRegenerate}
 
-                    </div>
+>
 
-                  </>
+<RefreshCcw size={18}/>
 
-                  :
+Regenerate
 
-                  <div className="planner-empty-state">
+</button>
 
-                    <Bot
-                      size={60}
-                      className="empty-icon"
-                    />
+<button
 
-                    <h3>
+type="button"
 
-                      AI Quiz Generator Ready
+className="ai-quiz-btn"
 
-                    </h3>
+onClick={handleCopy}
 
-                    <p>
+>
 
-                      Fill the form and click
-                      <strong> Generate AI Quiz </strong>
-                      to create personalized questions.
+<Clipboard size={18}/>
 
-                    </p>
+Copy
 
-                    <ul>
+</button>
 
-                      <li>MCQ Questions</li>
+<button
 
-                      <li>True / False Questions</li>
+type="button"
 
-                      <li>Short Answer Questions</li>
+className="ai-quiz-btn ai-quiz-danger"
 
-                      <li>Correct Answers</li>
+onClick={handleClear}
 
-                      <li>Detailed Explanations</li>
+>
 
-                    </ul>
+<Trash2 size={18}/>
 
-                  </div>
+Clear
 
-            }
+</button>
 
-          </div>
+</div>
 
-        </div>
+</>
 
-      </main>
+:
 
-    </div>
+<div className="ai-quiz-empty">
 
-  );
+<Bot
+
+size={60}
+
+className="ai-quiz-empty-icon"
+
+/>
+
+<h3>
+
+AI Quiz Generator Ready
+
+</h3>
+
+<p>
+
+Fill the form and click
+
+<strong> Generate AI Quiz </strong>
+
+to create personalized questions.
+
+</p>
+
+<ul>
+
+<li>MCQ Questions</li>
+
+<li>True / False Questions</li>
+
+<li>Short Answer Questions</li>
+
+<li>Correct Answers</li>
+
+<li>Detailed Explanations</li>
+
+</ul>
+
+</div>
+
+}
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+);
 
 }
 

@@ -24,6 +24,11 @@ You are an expert exam setter and subject matter expert.
 
 Create EXACTLY {request.number_of_questions} {request.question_type} questions.
 
+
+Instructions:
+
+Generate a high-quality, exam-oriented quiz strictly based on:
+
 Exam:
 {request.exam}
 
@@ -33,25 +38,84 @@ Subject:
 Topic:
 {request.topic}
 
+Question Type:
+{request.question_type}
+
+Number of Questions:
+{request.number_of_questions}
+
 Difficulty:
 {request.difficulty}
 
-Instructions:
+Language:
+{request.language}
+
+====================================
+QUESTION QUALITY
+====================================
 
 - Generate ONLY questions related to the given topic.
-- Questions must match the selected difficulty level.
-- Every question must be factually and mathematically correct.
+- Follow the official syllabus and difficulty level of the selected examination.
+- Never generate questions outside the selected exam syllabus.
+- Questions must test understanding, not just memorization.
+- Mix conceptual, application-based and analytical questions whenever appropriate.
+- Avoid vague or generic questions.
+- Avoid duplicate questions.
+- Do not repeat the same concept.
+- Every question must be factually, logically and mathematically correct.
 - Verify every answer before writing it.
 - Never contradict the explanation.
-- Avoid duplicate questions.
-- Do not repeat concepts.
-- Use clear English.
+- Ensure every distractor (wrong option) is realistic.
+- Make sure only ONE option is correct.
+- Use clear and professional language.
 
-Formatting:
+====================================
+QUESTION TYPE RULES
+====================================
+
+If Question Type = MCQ
+→ Generate only MCQs.
+
+If Question Type = True / False
+→ Generate only True / False questions.
+
+If Question Type = Short Answer
+→ Generate only Short Answer questions.
+
+If Question Type = Mixed
+→ Mix:
+- MCQs
+- True / False
+- Fill in the Blanks
+- Short Answer
+- Match the Following (when appropriate)
+
+====================================
+DIFFICULTY RULES
+====================================
+
+Easy
+• Basic concepts
+• Definitions
+• Direct questions
+
+Medium
+• Conceptual understanding
+• Moderate application
+• Simple reasoning
+
+Hard
+• Advanced reasoning
+• Multi-step solving
+• Case-based/application questions
+
+====================================
+FORMAT
+====================================
 
 ## Question 1
 
-Question Text
+Question
 
 A. Option 1
 
@@ -65,38 +129,65 @@ Correct Answer:
 A
 
 Explanation:
-Explain why the answer is correct in 2–4 lines.
+
+- Why the correct answer is correct.
+- Why the remaining options are incorrect (briefly).
 
 Concept Tested:
-Mention the concept.
 
 Difficulty:
-{request.difficulty}
 
-Repeat the same structure for every question.
+Estimated Time:
 
-Rules:
-VERY IMPORTANT
+Repeat this structure for every question.
+
+====================================
+QUALITY CHECK
+====================================
 
 Before returning each question:
 
 1. Solve the question yourself.
-2. Verify that the Correct Answer exactly matches the Explanation.
-3. Verify every mathematical calculation.
-4. If the explanation contradicts the answer, regenerate that question.
-5. Never guess mathematical values.
-6. Never produce logically incorrect questions.
-7. Ensure every option is unique.
-8. Do not repeat concepts.
-9. Make sure only ONE option is correct.
+2. Verify the correct answer.
+3. Verify the explanation.
+4. Ensure explanation matches the answer.
+5. Verify all calculations.
+6. Ensure only ONE correct option.
+7. Ensure options are unique.
+8. Avoid repeated concepts.
+9. Remove ambiguous wording.
+10. Regenerate any incorrect question.
+====================================
+LANGUAGE
+====================================
+
+Generate the complete quiz in:
+
+{request.language}
+
+All questions, explanations and concepts must be written in the selected language.
+
+Do not mix languages unless the selected language is Hinglish.
+====================================
+FORMATTING RULES
+====================================
 
 - Return Markdown only.
 - Do NOT return JSON.
 - Do NOT add introductions.
 - Do NOT add conclusions.
 - Do NOT use emojis.
-- Ensure every explanation matches the correct answer.
-- Mathematical calculations must be accurate.
+- Keep formatting consistent.
+- Number all questions correctly.
+- Leave one blank line between questions.
+
+====================================
+FINAL QUALITY
+====================================
+
+The quiz should look like it was created by an experienced exam paper setter, not by a generic AI.
+
+Generate ONLY the quiz.
 """
 @router.post("/generate")
 def generate_ai_quiz(

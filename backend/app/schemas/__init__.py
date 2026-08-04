@@ -1,0 +1,1 @@
+from app.schemas.notes import NotesRequest, NotesResponse

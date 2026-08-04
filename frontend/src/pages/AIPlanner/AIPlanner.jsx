@@ -143,28 +143,27 @@ function AIPlanner() {
   };
 
   return (
-    <div className="ai-page">
+    <div className="ai-planner-page">
       <Sidebar />
 
-      <main className="ai-content">
-        <div className="page-title">
+      <main className="ai-planner-content">
+        <div className="ai-planner-title">
           <Bot size={34} />
 
           <h1>AI Study Planner</h1>
         </div>
 
-        <p className="subtitle">
+        <p className="ai-planner-subtitle">
           Generate personalized AI study plans.
         </p>
 
-        <div className="planner-grid">
-
+        <div className="ai-planner-grid">
           <form
-            className="ai-form"
+            className="ai-planner-form"
             onSubmit={handleSubmit}
           >
 
-            <div className="form-group">
+            <div className="ai-planner-form-group">
               <label>Exam</label>
 
               <input
@@ -176,7 +175,7 @@ function AIPlanner() {
               />
             </div>
 
-            <div className="form-group">
+            <div className="ai-planner-form-group">
               <label>Subject</label>
 
               <input
@@ -188,7 +187,7 @@ function AIPlanner() {
               />
             </div>
 
-            <div className="form-group">
+            <div className="ai-planner-form-group">
               <label>Topic</label>
 
               <input
@@ -200,7 +199,7 @@ function AIPlanner() {
               />
             </div>
 
-            <div className="form-group">
+            <div className="ai-planner-form-group">
               <label>Study Hours / Day</label>
 
               <input
@@ -213,7 +212,7 @@ function AIPlanner() {
               />
             </div>
 
-            <div className="form-group">
+            <div className="ai-planner-form-group">
               <label>Total Days</label>
 
               <input
@@ -225,7 +224,7 @@ function AIPlanner() {
               />
             </div>
 
-            <div className="form-group">
+            <div className="ai-planner-form-group">
               <label>Difficulty</label>
 
               <select
@@ -241,7 +240,7 @@ function AIPlanner() {
               </select>
             </div>
 
-            <div className="form-group">
+            <div className="ai-planner-form-group">
               <label>Language</label>
 
               <select
@@ -257,7 +256,7 @@ function AIPlanner() {
               </select>
             </div>
 
-            <div className="form-group">
+            <div className="ai-planner-form-group">
               <label>Learning Style</label>
 
               <select
@@ -283,7 +282,7 @@ function AIPlanner() {
 
             <button
               type="submit"
-              className="generate-btn"
+              className="ai-planner-btn-generate"
               disabled={loading}
             >
               {loading ? (
@@ -305,11 +304,11 @@ function AIPlanner() {
             </button>
 
           </form>
-                    <div className="result-box">
+                    <div className="ai-planner-result">
 
-            <div className="result-header">
+            <div className="ai-planner-result-header">
 
-              <h2>
+              <h2 className="ai-planner-result-title">
 
                 <FileText size={22} />
 
@@ -321,19 +320,19 @@ function AIPlanner() {
 
             {loading ? (
 
-              <div className="loading-box">
+              <div className="ai-planner-loading">
 
                 <LoaderCircle
                   size={42}
                   className="spin"
                 />
 
-                <h3>Generating Study Plan...</h3>
+                <h3 className="ai-planner-loading-title">
+                    Generating Study Plan...
+               </h3>
 
-                <p>
-
-                  AI is preparing your personalized roadmap...
-
+                <p className="ai-planner-loading-text">
+                    AI is preparing your personalized roadmap...
                 </p>
 
               </div>
@@ -342,7 +341,7 @@ function AIPlanner() {
 
               <>
 
-                <div className="markdown-result">
+                <div className="ai-planner-markdown">
 
                   <ReactMarkdown>
                     {result}
@@ -350,11 +349,11 @@ function AIPlanner() {
 
                 </div>
 
-                <div className="plan-actions">
+                <div className="ai-planner-actions">
 
                   <button
                     type="button"
-                    className="action-btn"
+                    className="ai-planner-btn"
                     onClick={handleSavePlan}
                   >
 
@@ -366,7 +365,7 @@ function AIPlanner() {
 
                   <button
                     type="button"
-                    className="action-btn"
+                    className="ai-planner-btn"
                     onClick={handleExportPDF}
                   >
 
@@ -378,7 +377,7 @@ function AIPlanner() {
 
                   <button
                     type="button"
-                    className="action-btn"
+                    className="ai-planner-btn"
                     onClick={handleRegenerate}
                   >
 
@@ -390,7 +389,7 @@ function AIPlanner() {
 
                   <button
                     type="button"
-                    className="action-btn"
+                    className="ai-planner-btn"
                     onClick={handleAddToCalendar}
                   >
 
@@ -402,7 +401,7 @@ function AIPlanner() {
 
                   <button
                     type="button"
-                    className="action-btn"
+                    className="ai-planner-btn"
                     onClick={handleCopy}
                   >
 
@@ -414,7 +413,7 @@ function AIPlanner() {
 
                   <button
                     type="button"
-                    className="action-btn danger-btn"
+                    className="ai-planner-btn ai-planner-danger"
                     onClick={handleClear}
                   >
 
@@ -430,11 +429,11 @@ function AIPlanner() {
 
             ) : (
 
-              <div className="planner-empty-state">
+              <div className="ai-planner-empty">
 
                 <Bot
                   size={60}
-                  className="empty-icon"
+                  className="ai-planner-empty-icon"
                 />
 
                 <h3>

@@ -155,7 +155,7 @@ function MyPlans() {
 
        <div className="page-header">
 
-  <div className="page-title">
+  <div className="page-header">
 
     <BookOpen size={34} />
 

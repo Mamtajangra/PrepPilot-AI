@@ -7,11 +7,11 @@
     font-family:"Poppins",sans-serif;
 }
 
-/* ======================================
+/* =====================================
 Layout
-====================================== */
+===================================== */
 
-.ai-quiz-page{
+.ai-notes-page{
 
     display:flex;
 
@@ -21,7 +21,7 @@ Layout
 
 }
 
-.ai-quiz-content{
+.ai-notes-content{
 
     flex:1;
 
@@ -33,11 +33,11 @@ Layout
 
 }
 
-/* ======================================
+/* =====================================
 Title
-====================================== */
+===================================== */
 
-.ai-quiz-title{
+.ai-notes-title{
 
     display:flex;
 
@@ -49,13 +49,13 @@ Title
 
 }
 
-.ai-quiz-title svg{
+.ai-notes-title svg{
 
     color:#14B8A6;
 
 }
 
-.ai-quiz-title h1{
+.ai-notes-title h1{
 
     font-size:36px;
 
@@ -65,7 +65,7 @@ Title
 
 }
 
-.ai-quiz-subtitle{
+.ai-notes-subtitle{
 
     color:#94A3B8;
 
@@ -75,11 +75,11 @@ Title
 
 }
 
-/* ======================================
+/* =====================================
 Grid
-====================================== */
+===================================== */
 
-.ai-quiz-grid{
+.ai-notes-grid{
 
     display:grid;
 
@@ -91,11 +91,11 @@ Grid
 
 }
 
-/* ======================================
+/* =====================================
 Form
-====================================== */
+===================================== */
 
-.ai-quiz-form{
+.ai-notes-form{
 
     background:#1C2128;
 
@@ -115,7 +115,7 @@ Form
 
 }
 
-.ai-quiz-form-group{
+.ai-notes-form-group{
 
     display:flex;
 
@@ -125,7 +125,7 @@ Form
 
 }
 
-.ai-quiz-form-group label{
+.ai-notes-form-group label{
 
     color:#F8FAFC;
 
@@ -135,8 +135,8 @@ Form
 
 }
 
-.ai-quiz-form-group input,
-.ai-quiz-form-group select{
+.ai-notes-form-group input,
+.ai-notes-form-group select{
 
     width:100%;
 
@@ -166,7 +166,7 @@ Form
 
 }
 
-.ai-quiz-form-group option{
+.ai-notes-form-group option{
 
     background:#0D1117;
 
@@ -174,14 +174,14 @@ Form
 
 }
 
-.ai-quiz-form-group input::placeholder{
+.ai-notes-form-group input::placeholder{
 
     color:#94A3B8;
 
 }
 
-.ai-quiz-form-group input:focus,
-.ai-quiz-form-group select:focus{
+.ai-notes-form-group input:focus,
+.ai-notes-form-group select:focus{
 
     outline:none;
 
@@ -191,13 +191,15 @@ Form
 
 }
 
-.ai-quiz-btn-generate{
+/* =====================================
+Generate Button
+===================================== */
+
+.ai-notes-btn-generate{
 
     width:100%;
 
     height:54px;
-
-    margin-top:8px;
 
     border:none;
 
@@ -207,6 +209,10 @@ Form
 
     color:#fff;
 
+    font-size:15px;
+
+    font-weight:600;
+
     display:flex;
 
     justify-content:center;
@@ -215,17 +221,13 @@ Form
 
     gap:10px;
 
-    font-size:15px;
-
-    font-weight:600;
-
     cursor:pointer;
 
     transition:.3s;
 
 }
 
-.ai-quiz-btn-generate:hover{
+.ai-notes-btn-generate:hover{
 
     background:#0F766E;
 
@@ -233,18 +235,18 @@ Form
 
 }
 
-.ai-quiz-btn-generate:disabled{
+.ai-notes-btn-generate:disabled{
 
     opacity:.7;
 
     cursor:not-allowed;
 
 }
-/* ======================================
+/* =====================================
 Result
-====================================== */
+===================================== */
 
-.ai-quiz-result{
+.ai-notes-result{
 
     background:#1C2128;
 
@@ -258,15 +260,19 @@ Result
 
     box-shadow:0 15px 35px rgba(0,0,0,.25);
 
-    overflow:hidden;
-
     display:flex;
 
     flex-direction:column;
 
+    overflow:hidden;
+
 }
 
-.ai-quiz-result-header{
+/* =====================================
+Result Header
+===================================== */
+
+.ai-notes-result-header{
 
     display:flex;
 
@@ -274,7 +280,7 @@ Result
 
     align-items:center;
 
-    margin-bottom:25px;
+    margin-bottom:24px;
 
     padding-bottom:16px;
 
@@ -282,7 +288,7 @@ Result
 
 }
 
-.ai-quiz-result-title{
+.ai-notes-result-title{
 
     display:flex;
 
@@ -290,25 +296,25 @@ Result
 
     gap:10px;
 
-    font-size:24px;
-
     color:#F8FAFC;
+
+    font-size:24px;
 
     font-weight:700;
 
 }
 
-.ai-quiz-result-title svg{
+.ai-notes-result-title svg{
 
     color:#14B8A6;
 
 }
 
-/* ======================================
+/* =====================================
 Loading
-====================================== */
+===================================== */
 
-.ai-quiz-loading{
+.ai-notes-loading{
 
     flex:1;
 
@@ -326,7 +332,7 @@ Loading
 
 }
 
-.ai-quiz-loading-title{
+.ai-notes-loading-title{
 
     margin-top:18px;
 
@@ -338,7 +344,7 @@ Loading
 
 }
 
-.ai-quiz-loading-text{
+.ai-notes-loading-text{
 
     margin-top:8px;
 
@@ -370,11 +376,11 @@ transform:rotate(360deg);
 
 }
 
-/* ======================================
+/* =====================================
 Markdown
-====================================== */
+===================================== */
 
-.ai-quiz-markdown{
+.ai-notes-markdown{
 
     flex:1;
 
@@ -390,7 +396,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown h1{
+.ai-notes-markdown h1{
 
     font-size:30px;
 
@@ -400,7 +406,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown h2{
+.ai-notes-markdown h2{
 
     font-size:24px;
 
@@ -410,7 +416,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown h3{
+.ai-notes-markdown h3{
 
     font-size:20px;
 
@@ -420,7 +426,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown h4{
+.ai-notes-markdown h4{
 
     font-size:17px;
 
@@ -430,7 +436,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown p{
+.ai-notes-markdown p{
 
     margin-bottom:14px;
 
@@ -438,8 +444,8 @@ Markdown
 
 }
 
-.ai-quiz-markdown ul,
-.ai-quiz-markdown ol{
+.ai-notes-markdown ul,
+.ai-notes-markdown ol{
 
     padding-left:24px;
 
@@ -447,19 +453,19 @@ Markdown
 
 }
 
-.ai-quiz-markdown li{
+.ai-notes-markdown li{
 
     margin-bottom:8px;
 
 }
 
-.ai-quiz-markdown strong{
+.ai-notes-markdown strong{
 
     color:#F8FAFC;
 
 }
 
-.ai-quiz-markdown code{
+.ai-notes-markdown code{
 
     background:#161B22;
 
@@ -471,7 +477,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown pre{
+.ai-notes-markdown pre{
 
     background:#161B22;
 
@@ -487,7 +493,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown pre code{
+.ai-notes-markdown pre code{
 
     background:none;
 
@@ -495,7 +501,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown table{
+.ai-notes-markdown table{
 
     width:100%;
 
@@ -505,15 +511,15 @@ Markdown
 
 }
 
-.ai-quiz-markdown table,
-.ai-quiz-markdown th,
-.ai-quiz-markdown td{
+.ai-notes-markdown table,
+.ai-notes-markdown th,
+.ai-notes-markdown td{
 
     border:1px solid #30363D;
 
 }
 
-.ai-quiz-markdown th{
+.ai-notes-markdown th{
 
     background:#161B22;
 
@@ -523,7 +529,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown td{
+.ai-notes-markdown td{
 
     padding:12px;
 
@@ -531,7 +537,7 @@ Markdown
 
 }
 
-.ai-quiz-markdown hr{
+.ai-notes-markdown hr{
 
     border:none;
 
@@ -541,13 +547,13 @@ Markdown
 
 }
 
-.ai-quiz-markdown::-webkit-scrollbar{
+.ai-notes-markdown::-webkit-scrollbar{
 
     width:8px;
 
 }
 
-.ai-quiz-markdown::-webkit-scrollbar-thumb{
+.ai-notes-markdown::-webkit-scrollbar-thumb{
 
     background:#30363D;
 
@@ -555,90 +561,16 @@ Markdown
 
 }
 
-.ai-quiz-markdown::-webkit-scrollbar-thumb:hover{
+.ai-notes-markdown::-webkit-scrollbar-thumb:hover{
 
     background:#14B8A6;
 
 }
-/* ======================================
-Empty State
-====================================== */
-
-.ai-quiz-empty{
-
-    flex:1;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:70px 20px;
-
-    min-height:420px;
-
-}
-
-.ai-quiz-empty-icon{
-
-    color:#14B8A6;
-
-    margin-bottom:22px;
-
-}
-
-.ai-quiz-empty h3{
-
-    color:#F8FAFC;
-
-    font-size:26px;
-
-    font-weight:700;
-
-    margin-bottom:16px;
-
-}
-
-.ai-quiz-empty p{
-
-    max-width:450px;
-
-    color:#94A3B8;
-
-    line-height:1.8;
-
-    margin-bottom:24px;
-
-}
-
-.ai-quiz-empty ul{
-
-    list-style:disc;
-
-    padding-left:24px;
-
-    text-align:left;
-
-    color:#CBD5E1;
-
-}
-
-.ai-quiz-empty li{
-
-    margin-bottom:8px;
-
-}
-
-/* ======================================
+/* =====================================
 Action Buttons
-====================================== */
+===================================== */
 
-.ai-quiz-actions{
+.ai-notes-actions{
 
     display:flex;
 
@@ -646,11 +578,11 @@ Action Buttons
 
     gap:14px;
 
-    margin-top:30px;
+    margin-bottom:24px;
 
 }
 
-.ai-quiz-btn{
+.ai-notes-btn{
 
     display:flex;
 
@@ -682,13 +614,13 @@ Action Buttons
 
 }
 
-.ai-quiz-btn svg{
+.ai-notes-btn svg{
 
     color:#14B8A6;
 
 }
 
-.ai-quiz-btn:hover{
+.ai-notes-btn:hover{
 
     background:#14B8A6;
 
@@ -700,33 +632,33 @@ Action Buttons
 
 }
 
-.ai-quiz-btn:hover svg{
+.ai-notes-btn:hover svg{
 
     color:#fff;
 
 }
 
-/* ======================================
+/* =====================================
 Danger Button
-====================================== */
+===================================== */
 
-.ai-quiz-danger{
+.ai-notes-danger{
 
     border:1px solid #EF4444;
 
-    color:#EF4444;
-
     background:transparent;
 
+    color:#EF4444;
+
 }
 
-.ai-quiz-danger svg{
+.ai-notes-danger svg{
 
     color:#EF4444;
 
 }
 
-.ai-quiz-danger:hover{
+.ai-notes-danger:hover{
 
     background:#EF4444;
 
@@ -736,19 +668,99 @@ Danger Button
 
 }
 
-.ai-quiz-danger:hover svg{
+.ai-notes-danger:hover svg{
 
     color:#fff;
 
 }
 
-/* ======================================
+/* =====================================
+Empty State
+===================================== */
+
+.ai-notes-empty{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    min-height:420px;
+
+}
+
+.ai-notes-empty-icon{
+
+    color:#14B8A6;
+
+    margin-bottom:22px;
+
+}
+
+.ai-notes-empty h3{
+
+    color:#F8FAFC;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin-bottom:16px;
+
+}
+
+.ai-notes-empty p{
+
+    max-width:450px;
+
+    color:#94A3B8;
+
+    line-height:1.8;
+
+    margin-bottom:24px;
+
+}
+
+.ai-notes-empty strong{
+
+    color:#F8FAFC;
+
+}
+
+.ai-notes-empty ul{
+
+    list-style:disc;
+
+    padding-left:24px;
+
+    text-align:left;
+
+    color:#CBD5E1;
+
+}
+
+.ai-notes-empty li{
+
+    margin-bottom:8px;
+
+}
+
+/* =====================================
 Responsive
-====================================== */
+===================================== */
 
 @media(max-width:1100px){
 
-.ai-quiz-grid{
+.ai-notes-grid{
 
 grid-template-columns:1fr;
 
@@ -758,13 +770,13 @@ grid-template-columns:1fr;
 
 @media(max-width:768px){
 
-.ai-quiz-content{
+.ai-notes-content{
 
 padding:20px;
 
 }
 
-.ai-quiz-title{
+.ai-notes-title{
 
 flex-direction:column;
 
@@ -772,29 +784,29 @@ align-items:flex-start;
 
 }
 
-.ai-quiz-title h1{
+.ai-notes-title h1{
 
 font-size:30px;
 
 }
 
-.ai-quiz-form,
+.ai-notes-form,
 
-.ai-quiz-result{
+.ai-notes-result{
 
 padding:22px;
 
 }
 
-.ai-quiz-actions{
+.ai-notes-actions{
 
 flex-direction:column;
 
 }
 
-.ai-quiz-btn,
+.ai-notes-btn,
 
-.ai-quiz-btn-generate{
+.ai-notes-btn-generate{
 
 width:100%;
 
@@ -804,31 +816,31 @@ width:100%;
 
 @media(max-width:480px){
 
-.ai-quiz-content{
+.ai-notes-content{
 
 padding:16px;
 
 }
 
-.ai-quiz-title h1{
+.ai-notes-title h1{
 
 font-size:26px;
 
 }
 
-.ai-quiz-subtitle{
+.ai-notes-subtitle{
 
 font-size:14px;
 
 }
 
-.ai-quiz-result-title{
+.ai-notes-result-title{
 
 font-size:20px;
 
 }
 
-.ai-quiz-markdown{
+.ai-notes-markdown{
 
 font-size:14px;
 

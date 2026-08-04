@@ -160,339 +160,278 @@ function MyQuizzes() {
     );
 
   };
-    return (
+  return (
 
-    <div className="ai-page">
+  <div className="my-quizzes-page">
 
-      <Sidebar />
+    <Sidebar />
 
-      <main className="ai-content">
+    <main className="my-quizzes-content">
 
-        <div className="page-title">
+      {/* ================= TITLE ================= */}
 
-          <BookOpen size={34} />
+      <div className="my-quizzes-title">
 
-          <h1>My Quizzes</h1>
+        <BookOpen size={34} />
 
-        </div>
+        <h1>My Quizzes</h1>
 
-        <p className="subtitle">
+      </div>
 
-          View and manage all your AI generated quizzes.
+      <p className="my-quizzes-subtitle">
 
-        </p>
+        View and manage all your AI generated quizzes.
 
-        <div className="search-box">
+      </p>
 
-          <Search size={18} />
+      {/* ================= SEARCH ================= */}
 
-          <input
+      <div className="my-quizzes-search">
 
-            type="text"
+        <Search size={18} />
 
-            placeholder="Search by Exam, Subject or Topic..."
+        <input
+          type="text"
+          placeholder="Search by Exam, Subject or Topic..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
-            value={search}
+      </div>
 
-            onChange={(e) =>
+      {
 
-              setSearch(e.target.value)
+        loading ?
 
-            }
+        <div className="my-quizzes-loading">
 
+          <LoaderCircle
+            className="spin"
+            size={45}
           />
 
+          <h3>
+
+            Loading Quizzes...
+
+          </h3>
+
         </div>
 
-        {
+        :
 
-          loading ?
+        filteredQuizzes.length === 0 ?
 
-          (
+        <div className="my-quizzes-empty">
 
-            <div className="loading-box">
+          <BookOpen
+            size={65}
+            className="my-quizzes-empty-icon"
+          />
 
-              <LoaderCircle
+          <h3>
 
-                className="spin"
+            No Quiz Found
 
-                size={45}
+          </h3>
 
-              />
+          <p>
 
-              <h3>Loading Quizzes...</h3>
+            Generate your first AI Quiz.
 
-            </div>
+          </p>
 
-          )
+        </div>
 
-          :
+        :
 
-          filteredQuizzes.length === 0 ?
+        <div className="my-quizzes-grid">
 
-          (
+          {
 
-            <div className="planner-empty-state">
+            filteredQuizzes.map((quiz) => (
 
-              <BookOpen
-
-                size={65}
-
-                className="empty-icon"
-
-              />
-
-              <h3>No Quiz Found</h3>
-
-              <p>
-
-                Generate your first AI Quiz.
-
-              </p>
-
-            </div>
-
-          )
-
-          :
-
-          (
-
-            <div className="quiz-grid">
-
-              {
-
-                filteredQuizzes.map((quiz) => (
-
-                  <div
-
-                    key={quiz.id}
-
-                    className="quiz-card"
-
-                  >
-
-                    <div className="quiz-card-header">
-
-                      <h3>
-
-                        {quiz.exam}
-
-                      </h3>
-
-                    </div>
-
-                    <p>
-
-                      <strong>
-
-                        Subject :
-
-                      </strong>
-
-                      {quiz.subject}
-
-                    </p>
-
-                    <p>
-
-                      <strong>
-
-                        Topic :
-
-                      </strong>
-
-                      {quiz.topic}
-
-                    </p>
-
-                    <p>
-
-                      <strong>
-
-                        Difficulty :
-
-                      </strong>
-
-                      {quiz.difficulty}
-
-                    </p>
-
-                    <p>
-
-                      <strong>
-
-                        Type :
-
-                      </strong>
-
-                      {quiz.question_type}
-
-                    </p>
-
-                    <p>
-
-                      <strong>
-
-                        Questions :
-
-                      </strong>
-
-                      {quiz.number_of_questions}
-
-                    </p>
-
-                    <div className="quiz-actions">
-
-                      <button
-
-                        onClick={()=>
-
-                          setSelectedQuiz(quiz)
-
-                        }
-
-                      >
-
-                        <Eye size={18}/>
-
-                        View
-
-                      </button>
-
-                      <button
-
-                        onClick={()=>
-
-                          handleCopy(quiz)
-
-                        }
-
-                      >
-
-                        <Clipboard size={18}/>
-
-                        Copy
-
-                      </button>
-
-                      <button
-
-                        onClick={()=>
-
-                          handlePDF(quiz)
-
-                        }
-
-                      >
-
-                        <Download size={18}/>
-
-                        PDF
-
-                      </button>
-
-                      <button
-
-                        className="delete-btn"
-
-                        onClick={()=>
-
-                          handleDelete(
-
-                            quiz.id
-
-                          )
-
-                        }
-
-                      >
-
-                        <Trash2 size={18}/>
-
-                        Delete
-
-                      </button>
-
-                    </div>
-
-                  </div>
-
-                ))
-
-              }
-
-            </div>
-
-          )
-
-        }
-
-        {
-
-          selectedQuiz &&
-
-          <div
-
-            className="quiz-modal"
-
-            onClick={()=>
-
-              setSelectedQuiz(null)
-
-            }
-
-          >
-
-            <div
-
-              className="quiz-modal-content"
-
-              onClick={(e)=>
-
-                e.stopPropagation()
-
-              }
-
-            >
-
-              <h2>
-
-                {selectedQuiz.exam}
-
-              </h2>
-
-              <pre>
-
-                {selectedQuiz.quiz}
-
-              </pre>
-
-              <button
-
-                onClick={()=>
-
-                  setSelectedQuiz(null)
-
-                }
-
+              <div
+                key={quiz.id}
+                className="my-quiz-card"
               >
 
-                Close
+                <div className="my-quiz-header">
 
-              </button>
+                  <h3>
 
-            </div>
+                    {quiz.exam}
+
+                  </h3>
+
+                </div>
+
+                <p>
+
+                  <strong>
+
+                    Subject :
+
+                  </strong>
+
+                  {quiz.subject}
+
+                </p>
+
+                <p>
+
+                  <strong>
+
+                    Topic :
+
+                  </strong>
+
+                  {quiz.topic}
+
+                </p>
+
+                <p>
+
+                  <strong>
+
+                    Difficulty :
+
+                  </strong>
+
+                  {quiz.difficulty}
+
+                </p>
+
+                <p>
+
+                  <strong>
+
+                    Type :
+
+                  </strong>
+
+                  {quiz.question_type}
+
+                </p>
+
+                <p>
+
+                  <strong>
+
+                    Questions :
+
+                  </strong>
+
+                  {quiz.number_of_questions}
+
+                </p>
+
+                                    {/* ================= ACTIONS ================= */}
+
+                <div className="my-quiz-actions">
+
+                  <button
+                    className="my-quiz-btn"
+                    onClick={() => setSelectedQuiz(quiz)}
+                  >
+
+                    <Eye size={18} />
+
+                    View
+
+                  </button>
+
+                  <button
+                    className="my-quiz-btn"
+                    onClick={() => handleCopy(quiz)}
+                  >
+
+                    <Clipboard size={18} />
+
+                    Copy
+
+                  </button>
+
+                  <button
+                    className="my-quiz-btn"
+                    onClick={() => handlePDF(quiz)}
+                  >
+
+                    <Download size={18} />
+
+                    PDF
+
+                  </button>
+
+                  <button
+                    className="my-quiz-btn my-quiz-delete"
+                    onClick={() => handleDelete(quiz.id)}
+                  >
+
+                    <Trash2 size={18} />
+
+                    Delete
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            ))
+
+          }
+
+        </div>
+
+      }
+
+      {
+
+        selectedQuiz &&
+
+        <div
+          className="my-quiz-modal"
+          onClick={() => setSelectedQuiz(null)}
+        >
+
+          <div
+            className="my-quiz-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            <h2>
+
+              {selectedQuiz.exam}
+
+            </h2>
+
+            <pre>
+
+              {selectedQuiz.quiz}
+
+            </pre>
+
+            <button
+              className="my-quiz-btn"
+              onClick={() => setSelectedQuiz(null)}
+            >
+
+              Close
+
+            </button>
 
           </div>
 
-        }
+        </div>
 
-      </main>
+      }
 
-    </div>
+    </main>
 
-  );
+  </div>
+
+);
 
 }
 

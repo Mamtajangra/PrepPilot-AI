@@ -13,6 +13,7 @@ import {
   BrainCircuit,
   ClipboardList,
   LogOut,
+  NotebookPen,
 } from "lucide-react";
 
 function Sidebar() {
@@ -49,8 +50,13 @@ function Sidebar() {
       path: "/ai-quiz",
       icon: <BrainCircuit size={20} />,
     },
-
     {
+      name: "AI Notes",
+      path: "/ai-notes",
+      icon: <NotebookPen size={20} />,
+    },
+
+{
       name: "My Quizzes",
       path: "/my-quizzes",
       icon: <ClipboardList size={20} />,
