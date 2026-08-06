@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import ReactMarkdown from "react-markdown";
-import jsPDF from "jspdf";
+import html2pdf from "html2pdf.js";
 
 import {
   Bot,
@@ -165,31 +165,44 @@ function AIQuiz() {
 
   const handleExportPDF = () => {
 
-    if (!quiz) {
+  if (!quiz) {
+    toast.error("Generate quiz first.");
+    return;
+  }
 
-      toast.error("Generate quiz first.");
+  const element = document.getElementById("quiz-pdf");
+   element.classList.add("pdf-export");
 
-      return;
+  html2pdf()
+    .set({
+      margin: 10,
+      filename: `${form.subject}_Quiz.pdf`,
+      image: {
+        type: "jpeg",
+        quality: 1,
+      },
+      html2canvas: {
+        scale: 2,
+        backgroundColor: "#ffffff",
+      },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait",
+      },
+      pagebreak: {
+        mode: ["css", "legacy"],
+      },
+    })
+    .from(element)
+    .save()
+    .then(() => {
 
-    }
+            element.classList.remove("pdf-export");
 
-    const doc = new jsPDF();
-
-    doc.setFontSize(20);
-
-    doc.text("PrepPilot AI Quiz", 20, 20);
-
-    doc.setFontSize(12);
-
-    const lines = doc.splitTextToSize(quiz, 170);
-
-    doc.text(lines, 20, 35);
-
-    doc.save(`${form.exam}_Quiz.pdf`);
-
-    toast.success("PDF Downloaded!");
-
-  };
+             toast.success("PDF Downloaded!");
+    });
+  }; 
 
     return (
 
@@ -416,7 +429,10 @@ quiz ?
 
 <>
 
-<div className="ai-quiz-markdown">
+<div
+id="quiz-pdf"
+className="ai-quiz-markdown"
+>
 
 <ReactMarkdown>
 
@@ -553,5 +569,6 @@ to create personalized questions.
 );
 
 }
+
 
 export default AIQuiz;

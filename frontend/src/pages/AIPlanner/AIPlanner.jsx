@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import ReactMarkdown from "react-markdown";
-import jsPDF from "jspdf";
+import html2pdf from "html2pdf.js";
 
 import {
   Bot,
@@ -109,28 +109,46 @@ function AIPlanner() {
     toast.info("Plan Cleared");
   };
 
-  const handleExportPDF = () => {
-    if (!result) {
-      toast.error("Generate a plan first.");
-      return;
-    }
+ const handleExportPDF = () => {
 
-    const pdf = new jsPDF();
+  if (!result) {
+    toast.error("Generate a plan first.");
+    return;
+  }
 
-    pdf.setFontSize(18);
+  const element = document.getElementById("planner-pdf");
+   element.classList.add("pdf-export");
 
-    pdf.text("PrepPilot AI Study Plan", 15, 20);
+  html2pdf()
+    .set({
+      margin: 10,
+      filename: `${form.subject}_StudyPlan.pdf`,
+      image: {
+        type: "jpeg",
+        quality: 1,
+      },
+      html2canvas: {
+        scale: 2,
+         backgroundColor: "#ffffff",
+      },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait",
+      },
+      pagebreak: {
+        mode: ["css", "legacy"],
+      },
+    })
+    .from(element)
+    .save()
+    .then(() => {
 
-    pdf.setFontSize(11);
+            element.classList.remove("pdf-export");
 
-    const lines = pdf.splitTextToSize(result, 180);
 
-    pdf.text(lines, 15, 35);
-
-    pdf.save("StudyPlan.pdf");
-
-    toast.success("PDF Downloaded");
-  };
+  toast.success("PDF Downloaded!");
+})};
 
   const handleRegenerate = () => {
     handleSubmit({
@@ -341,7 +359,10 @@ function AIPlanner() {
 
               <>
 
-                <div className="ai-planner-markdown">
+                <div
+id="planner-pdf"
+className="ai-planner-markdown"
+>
 
                   <ReactMarkdown>
                     {result}

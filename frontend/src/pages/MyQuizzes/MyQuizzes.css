@@ -648,3 +648,23 @@ font-size:22px;
 }
 
 }
+/* ===========================
+PDF Export
+=========================== */
+
+.pdf-export{
+    background:#fff !important;
+    color:#000 !important;
+}
+
+.pdf-export *{
+    color:#000 !important;
+}
+
+.pdf-export pre{
+    white-space:pre-wrap;
+    background:#f5f5f5 !important;
+    color:#000 !important;
+    border:1px solid #ddd;
+    padding:20px;
+}

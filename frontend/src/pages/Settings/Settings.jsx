@@ -14,6 +14,156 @@ import {
 
 function Settings() {
   const [darkMode, setDarkMode] = useState(false);
+  const examCategories = {
+  "Teaching Exams": [
+    "CTET",
+    "HTET",
+    "REET",
+    "UPTET",
+    "MPTET",
+    "KTET",
+    "BTET",
+    "TNTET",
+    "DSSSB",
+    "KVS",
+    "NVS",
+    "EMRS",
+  ],
+
+  "UPSC & Civil Services": [
+    "UPSC CSE",
+    "UPSC CDS",
+    "UPSC NDA",
+    "UPSC CAPF",
+    "UPSC EPFO",
+    "State PSC",
+    "HPSC",
+    "UPPSC",
+    "BPSC",
+    "MPPSC",
+    "RPSC",
+    "WBPSC",
+    "APPSC",
+    "TSPSC",
+  ],
+
+  "SSC Exams": [
+    "SSC CGL",
+    "SSC CHSL",
+    "SSC MTS",
+    "SSC CPO",
+    "SSC GD",
+    "SSC JE",
+    "SSC Stenographer",
+    "SSC Selection Post",
+  ],
+
+  "Railway Exams": [
+    "RRB NTPC",
+    "RRB Group D",
+    "RRB JE",
+    "RRB ALP",
+    "RPF SI",
+    "RPF Constable",
+  ],
+
+  "Banking Exams": [
+    "IBPS PO",
+    "IBPS Clerk",
+    "IBPS SO",
+    "SBI PO",
+    "SBI Clerk",
+    "RBI Grade B",
+    "RBI Assistant",
+    "NABARD",
+    "LIC AAO",
+    "NIACL AO",
+  ],
+
+  "Engineering & Technical": [
+    "GATE",
+    "ISRO",
+    "DRDO",
+    "BARC",
+    "AAI ATC",
+    "ECIL",
+    "BEL",
+    "HAL",
+    "IOCL",
+    "ONGC",
+    "BHEL",
+    "SAIL",
+    "NTPC",
+  ],
+
+  "Defence": [
+    "AFCAT",
+    "CDS",
+    "NDA",
+    "INET",
+    "Indian Navy SSR",
+    "Indian Air Force",
+    "Indian Army Agniveer",
+  ],
+
+  "Medical": [
+    "NEET UG",
+    "NEET PG",
+    "AIIMS",
+    "INI CET",
+    "FMGE",
+  ],
+
+  "Higher Education": [
+    "CSIR NET",
+    "UGC NET",
+    "JRF",
+    "SET",
+    "GATE",
+    "IIT JAM",
+    "CUET PG",
+  ],
+
+  "Law": [
+    "CLAT",
+    "AILET",
+    "Judiciary",
+  ],
+
+  "Management": [
+    "CAT",
+    "XAT",
+    "MAT",
+    "CMAT",
+    "SNAP",
+    "NMAT",
+  ],
+
+  "Computer Science": [
+    "NIELIT",
+    "Oracle Java",
+    "AWS",
+    "Azure",
+    "Google Cloud",
+  ],
+
+  "Private Jobs": [
+    "TCS NQT",
+    "Infosys",
+    "Wipro",
+    "Accenture",
+    "Capgemini",
+    "Cognizant",
+    "HCL",
+    "Tech Mahindra",
+    "Deloitte",
+    "Genpact",
+  ],
+
+  "Other": [
+    "Other",
+  ],
+};
   const [notifications, setNotifications] = useState(true);
   const [studyHours, setStudyHours] = useState(2);
   const [preferredExam, setPreferredExam] = useState("HTET");
@@ -126,18 +276,26 @@ function Settings() {
               Preferred Exam
               </label>
 
-            <select
-              value={preferredExam}
-              onChange={(e) => setPreferredExam(e.target.value)}
-            >
-              <option>HTET</option>
-              <option>CTET</option>
-              <option>UPSC</option>
-              <option>SSC</option>
-              <option>GATE</option>
-              <option>CSIR NET</option>
-              <option>Other</option>
-            </select>
+          <select
+  value={preferredExam}
+  onChange={(e) => setPreferredExam(e.target.value)}
+>
+  {Object.entries(examCategories).map(([category, exams]) => (
+    <optgroup
+      key={category}
+      label={category}
+    >
+      {exams.map((exam) => (
+        <option
+          key={exam}
+          value={exam}
+        >
+          {exam}
+        </option>
+      ))}
+    </optgroup>
+  ))}
+</select>
 
           </div>
 

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
-import jsPDF from "jspdf";
+import html2pdf from "html2pdf.js";
 
 import {
   Search,
@@ -132,34 +132,71 @@ function MyQuizzes() {
     }
 
   };
+const handlePDF = (quiz) => {
 
-  const handlePDF = (quiz) => {
+  const tempDiv = document.createElement("div");
 
-    const doc = new jsPDF();
+  tempDiv.className = "pdf-export";
 
-    doc.setFontSize(18);
+  tempDiv.style.padding = "30px";
+  tempDiv.style.background = "#ffffff";
+  tempDiv.style.color = "#000000";
+  tempDiv.style.width = "800px";
 
-    doc.text("PrepPilot AI Quiz",20,20);
+  tempDiv.innerHTML = `
+      <h1>PrepPilot AI Quiz</h1>
 
-    doc.setFontSize(11);
+      <h3>Exam: ${quiz.exam}</h3>
 
-    const lines = doc.splitTextToSize(
+      <h3>Subject: ${quiz.subject}</h3>
 
-      quiz.quiz,
+      <h3>Topic: ${quiz.topic}</h3>
 
-      170
+      <hr/>
 
-    );
+      <pre style="
+          white-space:pre-wrap;
+          font-family:inherit;
+          font-size:14px;
+      ">
+${quiz.quiz}
+      </pre>
+  `;
 
-    doc.text(lines,20,35);
+  document.body.appendChild(tempDiv);
 
-    doc.save(
+  html2pdf()
+    .set({
+      margin:10,
+      filename:`${quiz.exam}_${quiz.topic}.pdf`,
+      image:{
+        type:"jpeg",
+        quality:1,
+      },
+      html2canvas:{
+        scale:2,
+        backgroundColor:"#ffffff",
+      },
+      jsPDF:{
+        unit:"mm",
+        format:"a4",
+        orientation:"portrait",
+      },
+      pagebreak:{
+        mode:["css","legacy"],
+      }
+    })
+    .from(tempDiv)
+    .save()
+    .then(()=>{
 
-      `${quiz.exam}_${quiz.topic}.pdf`
+      document.body.removeChild(tempDiv);
 
-    );
+      toast.success("PDF Downloaded!");
 
-  };
+    });
+
+};
   return (
 
   <div className="my-quizzes-page">
@@ -406,11 +443,17 @@ function MyQuizzes() {
 
             </h2>
 
-            <pre>
+            <div
+    className="my-quiz-pdf-content"
+>
 
-              {selectedQuiz.quiz}
+<pre>
 
-            </pre>
+    {selectedQuiz.quiz}
+
+</pre>
+
+</div>
 
             <button
               className="my-quiz-btn"

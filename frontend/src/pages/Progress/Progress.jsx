@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { getProgress } from "../../services/ProgressService";
+import { toast } from "react-toastify";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import {
   TrendingUp,
@@ -13,6 +16,26 @@ import {
 import "./Progress.css";
 
 function Progress() {
+  const [progress, setProgress] = useState({
+  total: 0,
+  pending: 0,
+  completed: 0,
+  completion_rate: 0,
+});
+
+useEffect(() => {
+  loadProgress();
+}, []);
+
+const loadProgress = async () => {
+  try {
+    const data = await getProgress();
+    setProgress(data);
+  } catch (error) {
+    console.error(error);
+    toast.error("Failed to load progress.");
+  }
+};
   return (
     <div className="progress-page">
       <Sidebar />
@@ -42,33 +65,29 @@ function Progress() {
           <div className="progress-card">
             <Flame className="stat-icon" size={30} />
 
-            <h2>7</h2>
-
-            <p>Day Streak</p>
+            <h2>{progress.total}</h2>
+<p>Total Plans</p>
           </div>
 
           <div className="progress-card">
             <BookOpen className="stat-icon" size={30} />
 
-            <h2>45</h2>
-
-            <p>Topics Completed</p>
+            <h2>{progress.completed}</h2>
+<p>Completed Plans</p>
           </div>
 
           <div className="progress-card">
             <Clock3 className="stat-icon" size={30} />
 
-            <h2>32h</h2>
-
-            <p>Study Hours</p>
+            <h2>{progress.pending}</h2>
+<p>Pending Plans</p>
           </div>
 
           <div className="progress-card">
             <Target className="stat-icon" size={30} />
 
-            <h2>82%</h2>
-
-            <p>Goal Completed</p>
+            <h2>{progress.completion_rate}%</h2>
+<p>Completion Rate</p>
           </div>
         </section>
 
@@ -92,12 +111,16 @@ function Progress() {
           <div className="goal-card">
             <div className="goal-header">
               <span>Completed</span>
-
-              <span>75%</span>
+<span>{progress.completion_rate}%</span>
             </div>
 
             <div className="goal-bar">
-              <div className="goal-fill"></div>
+             <div
+  className="goal-fill"
+  style={{
+    width: `${progress.completion_rate}%`,
+  }}
+></div>
             </div>
           </div>
         </section>

@@ -15,3 +15,4 @@ function SearchBar({ value, onChange, placeholder }) {
 }
 
 export default SearchBar;
+

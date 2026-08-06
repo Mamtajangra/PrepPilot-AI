@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 import "../Dashboard/Dashboard.css";
 import Sidebar from "../../components/Sidebar/Sidebar";
-
+import html2pdf from "html2pdf.js";
 import { generateAINotes } from "../../services/AINotesService";
 
 import {
@@ -55,6 +55,70 @@ const handleSubmit = async (e) => {
     setLoading(false);
   }
 }; 
+const handleCopy = async () => {
+  try {
+    await navigator.clipboard.writeText(notes);
+    toast.success("Notes Copied!");
+  } catch {
+    toast.error("Copy Failed.");
+  }
+};
+
+const handleRegenerate = () => {
+  handleSubmit({
+    preventDefault: () => {},
+  });
+};
+
+const handleExportPDF = () => {
+
+  if (!notes) {
+    toast.error("Generate notes first.");
+    return;
+  }
+
+  const element = document.getElementById("notes-pdf");
+  element.classList.add("pdf-export");
+  // Backup original styles
+const oldBg = element.style.background;
+const oldColor = element.style.color;
+
+// PDF friendly styles
+element.style.background = "#ffffff";
+element.style.color = "#000000";
+
+  html2pdf()
+    .set({
+      margin: 10,
+      filename: `${form.subject}_Notes.pdf`,
+      image: {
+        type: "jpeg",
+        quality: 1,
+      },
+      html2canvas: {
+        scale: 2,
+        backgroundColor:"#ffffff"
+      },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait",
+      },
+      pagebreak: {
+        mode: ["css", "legacy"],
+      },
+    })
+    .from(element)
+    .save()
+    .then(() => {
+        element.classList.remove("pdf-export");
+
+    // Restore original styles
+    element.style.background = oldBg;
+    element.style.color = oldColor;
+
+  toast.success("PDF Downloaded!");
+})};
 return (
   <div className="ai-notes-page">
 
@@ -260,7 +324,11 @@ return (
 
       <div className="ai-notes-actions">
 
-        <button className="ai-notes-btn">
+        <button
+type="button"
+className="ai-notes-btn"
+onClick={handleCopy}
+>
 
           <Clipboard size={18} />
 
@@ -268,7 +336,11 @@ return (
 
         </button>
 
-        <button className="ai-notes-btn">
+        <button
+          type="button"
+          className="ai-notes-btn"
+          onClick={handleExportPDF}
+        >
 
           <Download size={18} />
 
@@ -276,7 +348,11 @@ return (
 
         </button>
 
-        <button className="ai-notes-btn">
+       <button
+type="button"
+className="ai-notes-btn"
+onClick={handleRegenerate}
+>
 
           <RefreshCcw size={18} />
 
@@ -285,8 +361,10 @@ return (
         </button>
 
       </div>
-
-      <div className="ai-notes-markdown">
+<div
+id="notes-pdf"
+className="ai-notes-markdown"
+>
 
         <ReactMarkdown>
 

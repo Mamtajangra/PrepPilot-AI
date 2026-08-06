@@ -64,29 +64,29 @@ Focus on conceptual understanding.
 FOLLOW THIS EXACT STRUCTURE
 ====================================
 
-# 📘 Topic Name
+#  Topic Name
 
 ---
 
-## 🎯 Exam Relevance
+##  Exam Relevance
 
 Explain why this topic is important in {request.exam}.
 
 ---
 
-## 📖 Introduction
+##  Introduction
 
 Introduce the topic in beginner-friendly language.
 
 ---
 
-## 🧠 Important Concepts
+##  Important Concepts
 
 Explain every important concept using headings and bullet points.
 
 ---
 
-## 📚 Definitions
+## Definitions
 
 Provide all important definitions.
 
@@ -94,13 +94,13 @@ Use a Markdown table whenever possible.
 
 ---
 
-## ⭐ Key Points
+##  Key Points
 
 Mention all important facts students must remember.
 
 ---
 
-## 📝 Formula Sheet
+##  Formula Sheet
 
 If formulas exist:
 
@@ -111,7 +111,7 @@ If no formulas exist, skip this section.
 
 ---
 
-## ✅ Solved Example
+##  Solved Example
 
 Provide ONE detailed solved example.
 
@@ -119,19 +119,19 @@ Explain every step.
 
 ---
 
-## 💡 Tricks / Memory Tips
+##  Tricks / Memory Tips
 
 Mention useful mnemonics and shortcuts.
 
 ---
 
-## ❌ Common Mistakes
+##  Common Mistakes
 
 Mention mistakes students commonly make.
 
 ---
 
-## 📌 PYQ Pattern
+##  PYQ Pattern
 
 Explain what type of questions are usually asked.
 
@@ -146,7 +146,7 @@ Examples:
 
 ---
 
-## 📝 Practice Questions
+## Practice Questions
 
 Generate 5 good practice questions.
 
@@ -154,13 +154,13 @@ Do NOT provide answers.
 
 ---
 
-## 🚀 Quick Revision
+##  Quick Revision
 
 Summarize the entire topic in concise bullet points.
 
 ---
 
-## 🎯 Most Important Exam Points
+##  Most Important Exam Points
 
 Mention only the highest priority revision points.
 
