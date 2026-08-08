@@ -9,6 +9,6 @@ pydantic-settings
 python-jose[cryptography]
 passlib[bcrypt]
 email-validator
-pwdlib
+pwdlib[argon2]
 google-generativeai
 groq
