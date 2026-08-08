@@ -1,305 +1,365 @@
-/* ===================================
+/* ==========================
    Layout
-=================================== */
+========================== */
 
-.progress-page{
-
-display:flex;
-
-min-height:100vh;
-
-background:#0D1117;
-
+.progress-page {
+  display: flex;
+  min-height: 100vh;
+  background: #0D1117;
 }
 
-.progress-content{
-
-flex:1;
-
-padding:35px;
-
-overflow-y:auto;
-
+.progress-content {
+  flex: 1;
+  padding: 35px;
+  overflow-y: auto;
 }
 
-/* ===================================
+
+/* ==========================
    Hero
-=================================== */
+========================== */
 
-.progress-hero{
-
-background:#1C2128;
-
-border:1px solid #30363D;
-
-border-radius:22px;
-
-padding:35px;
-
-margin-bottom:30px;
-
+.progress-hero {
+  background: #1C2128;
+  border: 1px solid #30363D;
+  border-radius: 22px;
+  padding: 35px;
+  margin-bottom: 30px;
 }
 
-.hero-badge{
-display:flex;
-align-items:center;
-gap:8px;
-width:fit-content;
-}
-.stat-icon{
-color:#14B8A6;
-margin-bottom:12px;
+.hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  color: #14B8A6;
 }
 
-.progress-hero h1{
-
-font-size:36px;
-
-color:#F8FAFC;
-
-margin-bottom:12px;
-
+.stat-icon {
+  color: #14B8A6;
+  margin-bottom: 12px;
 }
 
-.progress-hero p{
-
-color:#94A3B8;
-
-font-size:16px;
-
-line-height:1.8;
-
+.progress-hero h1 {
+  font-size: 36px;
+  color: #F8FAFC;
+  margin-bottom: 12px;
 }
 
-/* ===================================
+.progress-hero p {
+  color: #94A3B8;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* ==========================
    Stats
-=================================== */
+========================== */
 
-.progress-stats{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:24px;
-
-margin-bottom:30px;
-
+.progress-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 30px;
 }
 
-.progress-card{
+.progress-card {
+  background: #1C2128;
+  border: 1px solid #30363D;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
 
-background:#1C2128;
-
-border:1px solid #30363D;
-
-border-radius:20px;
-
-padding:28px;
-
-text-align:center;
-
-transition:.3s;
-
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.progress-card:hover{
-
-border-color:#14B8A6;
-
-transform:translateY(-6px);
-
-box-shadow:0 15px 35px rgba(20,184,166,.15);
-
+.progress-card:hover {
+  border-color: #14B8A6;
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(20, 184, 166, 0.15);
 }
 
-.progress-card span{
-
-font-size:36px;
-
-display:block;
-
-margin-bottom:16px;
-
+.progress-card span {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 16px;
 }
 
-.progress-card h2{
-
-color:#F8FAFC;
-
-font-size:34px;
-
-margin-bottom:10px;
-
+.progress-card h2 {
+  color: #F8FAFC;
+  font-size: 34px;
+  margin-bottom: 10px;
 }
 
-.progress-card p{
-
-color:#94A3B8;
-
+.progress-card p {
+  color: #94A3B8;
 }
 
-/* ===================================
+
+/* ==========================
    Sections
-=================================== */
+========================== */
 
-.progress-section{
-
-background:#1C2128;
-
-border:1px solid #30363D;
-
-border-radius:20px;
-
-padding:28px;
-
-margin-bottom:30px;
-
+.progress-section {
+  background: #1C2128;
+  border: 1px solid #30363D;
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 30px;
 }
 
-.progress-section h2{
-
-color:#F8FAFC;
-
-margin-bottom:22px;
-
+.progress-section h2 {
+  color: #F8FAFC;
+  margin-bottom: 22px;
 }
 
-/* ===================================
+
+/* ==========================
    Chart
-=================================== */
+========================== */
 
-.chart-placeholder{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:12px;
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
-.chart-placeholder svg{
-color:#14B8A6;
+.chart-placeholder svg {
+  color: #14B8A6;
 }
 
-/* ===================================
+
+/* ==========================
    Goal
-=================================== */
+========================== */
 
-.goal-header{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-bottom:15px;
-
-color:#CBD5E1;
-
-font-weight:600;
-
+.goal-card {
+  width: 100%;
 }
 
-.goal-bar{
-
-height:14px;
-
-background:#30363D;
-
-border-radius:999px;
-
-overflow:hidden;
-
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #CBD5E1;
+  font-weight: 600;
 }
 
-.goal-fill{
-
-width:75%;
-
-height:100%;
-
-background:linear-gradient(90deg,#14B8A6,#22C55E);
-
-border-radius:999px;
-
+.goal-bar {
+  width: 100%;
+  height: 14px;
+  background: #30363D;
+  border-radius: 999px;
+  overflow: hidden;
 }
 
-/* ===================================
+.goal-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #14B8A6,
+    #22C55E
+  );
+  border-radius: 999px;
+
+  transition: width 0.5s ease;
+}
+
+
+/* ==========================
    Achievements
-=================================== */
+========================== */
 
-.achievement-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:20px;
-
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.achievement-card{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
+.achievement-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 24px;
+
+  background: #1C2128;
+  border: 1px solid #30363D;
+  border-radius: 18px;
+
+  color: #F8FAFC;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.achievement-card svg{
-color:#14B8A6;
+.achievement-card:hover {
+  border-color: #14B8A6;
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(20, 184, 166, 0.12);
 }
 
-.achievement-card:hover{
-
-border-color:#14B8A6;
-
-transform:translateY(-5px);
-
+.achievement-card svg {
+  color: #14B8A6;
+  flex-shrink: 0;
 }
 
-/* ===================================
+
+/* ==========================
+   Achievement Modal
+========================== */
+
+.achievement-modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 9999;
+}
+
+.achievement-modal-content {
+  width: min(420px, 90%);
+
+  padding: 32px;
+
+  background: #1C2128;
+
+  border: 1px solid #343B44;
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.achievement-modal-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 15px;
+
+  color: #14B8A6;
+}
+
+.achievement-modal-content h2 {
+  color: #F8FAFC;
+  margin-bottom: 10px;
+}
+
+.achievement-modal-content p {
+  color: #AAB4C3;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.achievement-close-btn {
+  padding: 10px 22px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  background: #14B8A6;
+  color: #FFFFFF;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.achievement-close-btn:hover {
+  background: #0F766E;
+  transform: translateY(-2px);
+}
+
+
+/* ==========================
    Responsive
-=================================== */
+========================== */
 
-@media(max-width:992px){
+@media (max-width: 1200px) {
+  .progress-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.progress-stats{
-
-grid-template-columns:repeat(2,1fr);
-
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.achievement-grid{
 
-grid-template-columns:repeat(2,1fr);
+@media (max-width: 768px) {
+  .progress-content {
+    padding: 20px;
+  }
 
+  .progress-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-hero {
+    padding: 25px;
+  }
+
+  .progress-hero h1 {
+    font-size: 30px;
+  }
+
+  .progress-section {
+    padding: 22px;
+  }
 }
 
-}
 
-@media(max-width:768px){
+@media (max-width: 480px) {
+  .progress-content {
+    padding: 15px;
+  }
 
-.progress-content{
+  .progress-hero h1 {
+    font-size: 26px;
+  }
 
-padding:20px;
+  .progress-card {
+    padding: 22px;
+  }
 
-}
+  .progress-card h2 {
+    font-size: 30px;
+  }
 
-.progress-stats{
-
-grid-template-columns:1fr;
-
-}
-
-.achievement-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.progress-hero h1{
-
-font-size:30px;
-
-}
-
+  .achievement-card {
+    padding: 20px;
+  }
 }

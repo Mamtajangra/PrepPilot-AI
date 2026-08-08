@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import ReactMarkdown from "react-markdown";
 import html2pdf from "html2pdf.js";
-
+import CalendarModal from "../../components/Calendar/CalendarModal";
 import {
   Bot,
   FileText,
@@ -19,7 +19,11 @@ import {
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { generateAIPlan } from "../../services/AIPlannerService";
 import { saveAIPlan } from "../../services/PlannerService";
-
+import {
+  downloadICS,
+  openGoogleCalendar,
+  openOutlookCalendar,
+} from "../../services/CalendarService";
 import "./AIPlanner.css";
 
 function AIPlanner() {
@@ -36,6 +40,8 @@ function AIPlanner() {
 
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
   const handleChange = (e) => {
     setForm((prev) => ({
@@ -157,8 +163,21 @@ function AIPlanner() {
   };
 
   const handleAddToCalendar = () => {
-    toast.info("Calendar Integration Coming Soon.");
-  };
+
+  if (!result) {
+    toast.error("Generate a study plan first.");
+    return;
+  }
+
+  setSelectedPlan({
+    subject: form.subject,
+    topic: form.topic,
+    study_date: new Date().toISOString(),
+  });
+
+  setCalendarOpen(true);
+
+};
 
   return (
     <div className="ai-planner-page">
@@ -493,7 +512,13 @@ className="ai-planner-markdown"
 
         </div>
 
+
       </main>
+      <CalendarModal
+  open={calendarOpen}
+  onClose={() => setCalendarOpen(false)}
+  plan={selectedPlan}
+/>
 
     </div>
 
