@@ -10,6 +10,7 @@ DATABASE_URL = os.getenv(
 )
 
 
+# Render/PostgreSQL URL compatibility
 if DATABASE_URL.startswith("postgresql://"):
     DATABASE_URL = DATABASE_URL.replace(
         "postgresql://",
@@ -18,19 +19,29 @@ if DATABASE_URL.startswith("postgresql://"):
     )
 
 
+# Database engine
 if DATABASE_URL.startswith("sqlite"):
     engine = create_engine(
         DATABASE_URL,
-        connect_args={"check_same_thread": False}
+        connect_args={
+            "check_same_thread": False
+        }
     )
 else:
-    engine = create_engine(DATABASE_URL)
+    engine = create_engine(
+        DATABASE_URL,
+        pool_pre_ping=True,
+        pool_recycle=1800,
+    )
+
+
 print(
     "DATABASE TYPE:",
     "PostgreSQL" if "postgresql" in DATABASE_URL else "SQLite"
 )
 
 
+# Session
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
@@ -38,10 +49,12 @@ SessionLocal = sessionmaker(
 )
 
 
+# Base model
 class Base(DeclarativeBase):
     pass
 
 
+# Database dependency
 def get_db():
     db = SessionLocal()
 
@@ -51,6 +64,7 @@ def get_db():
         db.close()
 
 
+# Create tables
 def create_tables():
     import app.models
 
