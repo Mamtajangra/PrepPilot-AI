@@ -324,7 +324,7 @@ PrepPilot-AI/
 └── .gitignore
 ```
 
-### 3. API Modules
+###  API Modules
 
 The FastAPI backend provides APIs for:
 
@@ -386,13 +386,13 @@ SECRET_KEY=your_jwt_secret_key
 DATABASE_URL=your_database_url
 ```
 
-### 7. Running the Application
+###  Running the Application
 
 ## Start Backend
 cd backend
 uvicorn app.main:app --reload
 
-### 8. Production Deployment
+###  Production Deployment
 
 PrepPilot AI is deployed as a full-stack application.
 
@@ -433,6 +433,6 @@ https://preppilot-ai-bvbn.onrender.com/api/v1
 - Collaborative classroom mode
 - Improved mobile experience
 
-### 14. License
+### License
 
 This project is currently intended for educational and personal development purposes.
