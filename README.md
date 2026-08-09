@@ -26,55 +26,55 @@ https://preppilot-ai-bvbn.onrender.com/docs
 
 ### Login Page
 
-![Login](docs\screenshots\login.jpeg)
+![Login](docs/screenshots/login.jpeg)
 
 ### Dashboard
 
-![Dashboard](docs\screenshots\dashboard.jpeg)
+![Dashboard](docs/screenshots/dashboard.jpeg)
 
 ### AI Planner
 
-![AI Planner](docs\screenshots\ai_planner.jpeg)
+![AI Planner](docs/screenshots/ai_planner.jpeg)
 
 ### AI Quiz Generator
 
-![AI Quiz Generator](docs\screenshots\ai_quiz.jpeg)
+![AI Quiz Generator](docs/screenshots/ai_quiz.jpeg)
 
 ### My Quizzes
 
-![My Quizzes](docs\screenshots\my_quizzes.jpeg)
+![My Quizzes](docs/screenshots/my_quizzes.jpeg)
 
 ### AI Notes
 
-![AI Notes](docs\screenshots\ai_notes.jpeg)
+![AI Notes](docs/screenshots/ai_notes.jpeg)
 
 ### Calendar
 
-![Calendar](docs\screenshots\calendar.jpeg)
+![Calendar](docs/screenshots/calendar.jpeg)
 
 ### Progress Tracker
 
-![Progress Tracker](docs\screenshots\progress.jpeg)
+![Progress Tracker](docs/screenshots/progress.jpeg)
 
 ### Settings
 
-![Settings](docs\screenshots\settings.jpeg)
+![Settings](docs/screenshots/settings.jpeg)
 
 ### Analytics
 
-![Analytics](docs\screenshots\analytics.jpeg)
+![Analytics](docs/screenshots/analytics.jpeg)
 
 ### Profile Page
 
-![Profile](docs\screenshots\my_profile.jpeg)
+![Profile](docs/screenshots/my_profile.jpeg)
 
 ### Study Plan
 
-![Study Plan](docs\screenshots\my_study_plan.jpeg)
+![Study Plan](docs/screenshots/my_study_plan.jpeg)
 
 ### API Documentation
 
-![API Documentation](docs\screenshots\api_backend.jpeg)
+![API Documentation](docs/screenshots/api_backend.jpeg)
 
 #  Features
 
